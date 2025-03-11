@@ -9,14 +9,14 @@
 #   end
 
 puts "Destroying all records..."
-Destination.destroy_all
-User.destroy_all
-Flight.destroy_all
-Hotel.destroy_all
-Info.destroy_all
-Package.destroy_all
 Trip.destroy_all
+Package.destroy_all
 Itinerary.destroy_all
+Info.destroy_all
+Hotel.destroy_all
+Flight.destroy_all
+User.destroy_all
+Destination.destroy_all
 
 puts "Seeding Destinations..."
 paris = Destination.create!(name: "Paris")
