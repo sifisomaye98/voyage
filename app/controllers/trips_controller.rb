@@ -1,8 +1,25 @@
 class TripsController < ApplicationController
+
   before_action :set_trip, only: [:edit, :update]
   def edit
   end
 
+  def index
+    @trips = Trip.all
+  end
+   def show
+    @trip = Trip.find(params[:id])
+
+  def new
+    @trip = Trip.new
+  end
+
+  def create
+    @trip = Trip.new(params[:trip])
+    @trip.save
+
+  end
+  
   def update
     if @trip.update(trip_params)
       redirect_to trip_path(@trip)

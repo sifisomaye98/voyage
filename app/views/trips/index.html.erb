@@ -1,0 +1,9 @@
+
+<ul>
+  <% @trips.each do |trip| %>
+    <div class="card">
+      <li><%= "Your trip budget is: $#{trip.budget}" %></li>
+      <%= "Trip date: #{trip.start_date} - #{trip.end_date} " %>
+    </div>
+  <% end %>
+</ul>
