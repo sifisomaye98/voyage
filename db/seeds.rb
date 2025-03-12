@@ -7,6 +7,7 @@ Hotel.destroy_all
 Flight.destroy_all
 User.destroy_all
 Destination.destroy_all
+
 puts "Seeding Destinations..."
 paris = Destination.create!(name: "Paris")
 puts "Destination 'Paris' created."
