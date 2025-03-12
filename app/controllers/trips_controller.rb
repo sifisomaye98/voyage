@@ -19,7 +19,7 @@ class TripsController < ApplicationController
     @trip.save
 
   end
-  
+
   def update
     if @trip.update(trip_params)
       redirect_to trip_path(@trip)

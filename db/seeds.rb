@@ -241,4 +241,3 @@ trip5 = Trip.create!(
 )
 puts "Trip for Sydney created."
 puts "Seeding complete!"
-
