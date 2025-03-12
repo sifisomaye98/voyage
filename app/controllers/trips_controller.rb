@@ -7,8 +7,10 @@ class TripsController < ApplicationController
   def index
     @trips = Trip.all
   end
-   def show
+
+  def show
     @trip = Trip.find(params[:id])
+  end
 
   def new
     @trip = Trip.new
@@ -17,9 +19,8 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(params[:trip])
     @trip.save
-
   end
-  
+
   def update
     if @trip.update(trip_params)
       redirect_to trip_path(@trip)
