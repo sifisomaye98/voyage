@@ -18,6 +18,7 @@ class TripsController < ApplicationController
     # @trip.destination = destination
     @trip.user = current_user
     if @trip.save!
+      # CALL THE METHOD FOR CHAT TO GENERATE PACKAGES
       redirect_to trip_path(@trip)
     else
       render :new, status: :unprocessable_entity
