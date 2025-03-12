@@ -10,6 +10,8 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @packages = Package.all
+    #packages don't belong to a user
   end
 
   def new

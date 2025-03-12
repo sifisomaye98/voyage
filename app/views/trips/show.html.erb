@@ -1,11 +1,18 @@
 
-<div class="card">
-<h2><%="Your trip budget is: $#{@trip.budget} " %></h2>
-<p><%= "start date #{@trip.start_date}" %></p>
-<p><%= "end date #{@trip.end_date}" %></p>
-
+<div class="container">
+  <h2><%="Your trip budget is: R#{@trip.budget} " %></h2>
+  <p><%= "start date #{@trip.start_date}" %></p>
+  <p><%= "end date #{@trip.end_date}" %></p>
 </div>
-<h2><%= @package.name %></h2>
-<p><%= @package.category %></p>
-<p><%= @package.start_date %></p>
-<p><%= @package.end_date %></p>
+
+<div class="container">
+  <% @packages.each do |package| %>
+    <div class="card-packages">
+      <h1> <%= Package.humanized_categories[package.category.to_sym]%> </h1>
+      <p> <%= package.name %> </p>
+      <%# package.picture - cloudinary as a carousel%>
+      <%# package.category - name in the center %>
+      <%# package.name - as a text p tag  %>
+    </div>
+  <% end %>
+</div>
