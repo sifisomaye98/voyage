@@ -2,8 +2,8 @@ class ItinerariesController < ApplicationController
   before_action :set_itinerary, only: %i[show edit]
 
   def index
-    @package = Package.find(params[:package_id])
-    @itineraries = @package.itineraries
+    @trip = Trip.find(params[:trip_id])
+    @itineraries = @trip.itineraries
   end
 
   def show
@@ -14,15 +14,15 @@ class ItinerariesController < ApplicationController
   end
 
   def new
-    @package = Package.find(params[:package_id])
-    @package = itinerary.new
+    @trip = Trip.find(params[:trip_id])
+    @trip = itinerary.new
   end
 
   def create
     @itinerary = Itinerary.new(itinerary_params)
-    @itinerary.package = @package
+    @itinerary.trip = @trip
     if @itinerary.save
-      redirect_to package_path(@package)
+      redirect_to trip_path(@trip)
     else
       render :new, status: :unprocessable_entity
     end
