@@ -6,6 +6,9 @@ class TripsController < ApplicationController
   end
 
   def show
+    @trip = Trip.find(params[:id])
+    @packages = Package.all
+    #packages don't belong to a user will get from chatGPT
   end
 
   def new
