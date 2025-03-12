@@ -1,6 +1,6 @@
 class PackagesController < ApplicationController
   before_action :set_package, only: [:show, :edit, :update]
-  
+
   def show
   end
 
@@ -11,7 +11,7 @@ class PackagesController < ApplicationController
     if @package.update(package_params)
       redirect_to package_path(@package)
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
