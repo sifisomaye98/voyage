@@ -1,0 +1,9 @@
+<h1></h1>
+
+<ul>
+  <% @itineraries.each do |itinerary| %>
+    <div class="card">
+      <li><%= "Your trip budget is: $#{itinerary.budget}" %></li>
+    </div>
+  <% end %>
+</ul>

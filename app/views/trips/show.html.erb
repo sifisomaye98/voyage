@@ -1,4 +1,6 @@
 
+<!--FIRST GET TO CHOOSE PACKAGE-->
+<!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
 <div class="container">
   <h2><%="Your trip budget is: R#{@trip.budget} " %></h2>
   <p><%= "start date #{@trip.start_date}" %></p>
@@ -9,7 +11,7 @@
   <% @packages.each do |package| %>
     <div class="card-packages">
       <h1> <%= Package.humanized_categories[package.category.to_sym]%> </h1>
-      <p> <%= package.name %> </p>
+      <p> <%= link_to package.name, package_path(package) %> </p>
       <%# package.picture - cloudinary as a carousel%>
       <%# package.category - name in the center %>
       <%# package.name - as a text p tag  %>
