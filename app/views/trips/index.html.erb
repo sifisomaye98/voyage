@@ -1,9 +1,32 @@
+<div class="container">
+  <h1> Trip Inspo </h1>
+  <h4> Looking for your next adventure? Explore some incredible getaways that other travelers have experienced!
+    From relaxing beach escapes to thrilling mountain treks, these trips are sure to spark your wanderlust.
+    Get inspired, discover new destinations, and start planning your own unforgettable journey today!
+  </h4>
+    <ul>
+    <% @trips.each do |trip| %>
+      <div class="card">
+        <li><%= "Your trip budget is: $#{trip.budget}" %></li>
+        <%= "Trip date: #{trip.start_date} - #{trip.end_date} " %>
+      </div>
+    <% end %>
+  </ul>
 
-<ul>
+  <h4> Having a case of wanderlust? Start your own adventure now </h4>
+  <div class="button">
+    <%= link_to "Start your adventure", new_trip_path%>
+  </div>
+</div>
+
   <% @trips.each do |trip| %>
-    <div class="card">
-      <li><%= "Your trip budget is: $#{trip.budget}" %></li>
-      <%= "Trip date: #{trip.start_date} - #{trip.end_date} " %>
-    </div>
-  <% end %>
-</ul>
+    <div class="card-simple">
+      <p> <%= "Trip date: #{trip.start_date} - #{trip.end_date} " %> </p>
+        <a class="card-trip-button">See more</a>
+  <%end%>
+        <% @trips.each do |trip| %>
+          <%= cl_image_tag(trip.photo.key, height: 300, width: 400, crop: :fill) %>
+        <% end %>
+
+      </div>
+</div>
