@@ -1,9 +1,8 @@
 
-<ul>
+<div class="card-simple">
   <% @trips.each do |trip| %>
-    <div class="card">
-      <li><%= "Your trip budget is: $#{trip.budget}" %></li>
-      <%= "Trip date: #{trip.start_date} - #{trip.end_date} " %>
-    </div>
-  <% end %>
-</ul>
+      <p> <%= "Trip date: #{trip.start_date} to #{trip.end_date} " %> </p>
+        <a class="card-trip-button">see more</a>
+      </div>
+  <%end%>
+</div>
