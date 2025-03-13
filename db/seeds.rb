@@ -1,3 +1,5 @@
+require "open-uri"
+
 puts "Destroying all records..."
 Trip.destroy_all
 Package.destroy_all
@@ -229,5 +231,23 @@ trip5 = Trip.create!(
   package_id: package5.id,
   destination_id: sydney.id
 )
+
+#Attaching one photo to each trip
+file = URI.parse("http://res.cloudinary.com/dymquyp2y/image/upload/v1741795151/jophutix6sekqpmpv1at.jpg").open #photo1
+trip1.photo.attach(io: file, filename: "trip_1.jpg", content_type: "image/png")
+trip1.save!
+file = URI.parse("http://res.cloudinary.com/dymquyp2y/image/upload/v1741795173/bcshliedvsaswlmisscd.jpg").open #photo2
+trip2.photo.attach(io: file, filename: "trip_2.jpg", content_type: "image/png")
+trip2.save!
+file = URI.parse("http://res.cloudinary.com/dymquyp2y/image/upload/v1741795183/ic9qmu6j8x47brsqpk2x.jpg").open #photo3
+trip3.photo.attach(io: file, filename: "trip_3.jpg", content_type: "image/png")
+trip3.save!
+file = URI.parse("http://res.cloudinary.com/dymquyp2y/image/upload/v1741795195/rmudambo0bk7qi8gsy7d.jpg").open #photo4
+trip4.photo.attach(io: file, filename: "trip_4.jpg", content_type: "image/png")
+trip4.save!
+file = URI.parse("http://res.cloudinary.com/dymquyp2y/image/upload/v1741795204/bqgj69aeuvvnjnql9uty.jpg").open #photo5
+trip5.photo.attach(io: file, filename: "trip_5.jpg", content_type: "image/png")
+trip5.save!
+
 puts "Trip for Sydney created."
 puts "Seeding complete!"
