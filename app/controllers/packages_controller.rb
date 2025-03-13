@@ -2,13 +2,20 @@ class PackagesController < ApplicationController
   before_action :set_package, only: [:show, :edit, :update]
 
   def show
-  end
+    # Initialize OpenAI client and get response
+    client = OpenAI::Client.new
+    chatgpt_response = client.chat(parameters: {
+      model: "gpt-4o-mini",
+      messages: [{ role: "user", content: "Give me 5 travel packages to different cities for each #{Package.categories}."}]
+    })
 
-  # def edit
-    # @trip = Trip.find(params[trip_id])
-    # @package.trip = @trip
-    # set_package
-  # end
+    # Check if response is correctly formatted
+    if chatgpt_response["choices"].present?
+      @content = chatgpt_response["choices"][0]["message"]["content"]
+    else
+      @content = "No content available from the API."
+    end
+  end
 
   def update
     if @package.update(package_params)
@@ -20,11 +27,11 @@ class PackagesController < ApplicationController
 
   private
 
-  # def package_params
-    # params.require(:package).permit(:category, :name)
-  # end
-
   def set_package
     @package = Package.find(params[:id])
+  end
+
+  def package_params
+    params.require(:package).permit(:category, :name)
   end
 end

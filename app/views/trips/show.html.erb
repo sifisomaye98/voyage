@@ -1,20 +1,32 @@
+<% if @trip.package.present? %>
+  <div class="container">
+    <h2>Your trip budget is: R<%= @trip.budget %></h2>
+    <p>Start Date: <%= @trip.start_date %></p>
+    <p>End Date: <%= @trip.end_date %></p>
+  </div>
 
-<!--FIRST GET TO CHOOSE PACKAGE-->
-<!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
-<div class="container">
-  <h2><%="Your trip budget is: R#{@trip.budget} " %></h2>
-  <p><%= "start date #{@trip.start_date}" %></p>
-  <p><%= "end date #{@trip.end_date}" %></p>
-</div>
+  <!--<div class="container">-->
+    <%# @packages.each do |package| %>
+<!--      <div class="card-packages">
+        <h1><%#= Package.humanized_categories[package.category.to_sym] %></h1>
+        <p><%#= link_to package.name, package_path(package) %></p>
+      </div>
+    <%# end %>-->
+<!--  </div>-->
+<% else %>
+  <div class="container">
+    <h2>Your trip budget is: R<%= @trip.budget %></h2>
+    <p>Start Date: <%= @trip.start_date %></p>
+    <p>End Date: <%= @trip.end_date %></p>
+  </div>
 
-<div class="container">
-  <% @packages.each do |package| %>
-    <div class="card-packages">
-      <h1> <%= Package.humanized_categories[package.category.to_sym]%> </h1>
-      <p> <%= link_to package.name, package_path(package) %> </p>
-      <%# package.picture - cloudinary as a carousel%>
-      <%# package.category - name in the center %>
-      <%# package.name - as a text p tag  %>
-    </div>
-  <% end %>
-</div>
+  <div class="container">
+    <h3>No Package Assigned</h3>
+    <p>Would you like to choose a package for this trip?</p>
+    <%= link_to 'Choose Package', choose_package_trip_path(@trip), class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<p>
+  <%= @content %>
+</p>
