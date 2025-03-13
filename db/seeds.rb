@@ -233,7 +233,7 @@ trip5 = Trip.create!(
 )
 
 #Attaching one photo to each trip
-file = URI.parse("http://res.cloudinary.com/dymquyp2y/image/upload/v1741795151/jophutix6sekqpmpv1at.jpg").open #photo1
+file = URI.parse("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1\?q\=80\&w\=2940\&auto\=format\&fit\=crop\&ixlib\=rb-4.0.3\&ixid\=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open #photo1
 trip1.photo.attach(io: file, filename: "trip_1.jpg", content_type: "image/png")
 trip1.save!
 file = URI.parse("http://res.cloudinary.com/dymquyp2y/image/upload/v1741795173/bcshliedvsaswlmisscd.jpg").open #photo2
