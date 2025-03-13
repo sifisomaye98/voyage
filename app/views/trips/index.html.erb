@@ -19,3 +19,10 @@
   </div>
 </div>
 
+<div class="card-simple">
+  <% @trips.each do |trip| %>
+      <p> <%= "Trip date: #{trip.start_date} to #{trip.end_date} " %> </p>
+        <a class="card-trip-button">see more</a>
+      </div>
+  <%end%>
+</div>
