@@ -5,6 +5,23 @@ class Trip < ApplicationRecord
   has_many :itineraries
   has_one_attached :photo
 
+  enum category: {
+    backpacker: 1,
+    luxury_traveler: 2,
+    adventure_seeker: 3,
+    cultural_explorer: 4,
+    family_vacationer: 5
+  }
+    def self.humanized_categories
+      {
+        backpacker: "Backpacker",
+        luxury_traveler: "Luxury Traveller",
+        adventure_seeker: "Adventure Seeker",
+        cultural_explorer: "Cultural Explorer",
+        family_vacationer: "Family Vacationer"
+      }
+    end
+
   # method to generate optional packages for a trip
 
   # method to generate itineraries for a trip
