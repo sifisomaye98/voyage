@@ -1,16 +1,20 @@
   <div class="background_image">
      <h1>Voyage</h1>
-    <h1>The world is a click away</h1>
+    <h2 class="mb-2">The world is a click away</h2>
     <!--<div class= "trip-form">-->
+    <div class="container">
       <%= simple_form_for(@trip, html: { class:"trip-form"}) do |f| %>
-        <%= f.input :budget %>
+        <p>Start planning your next adventure</p>
+        <%= f.association :destination %>
+
         <%= f.input :start_date %>
         <%= f.input :end_date %>
-        <%= f.association :destination %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit %>
+
+        <%= f.input :budget, wrapper_html: { class: "form-flex"}  %>
+        <%= f.submit class: "card-simple-button" %>
       <% end %>
     <!--</div>-->
+    </div>
 
 
   </div>
