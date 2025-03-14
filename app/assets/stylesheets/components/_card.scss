@@ -94,3 +94,57 @@
 .card-trip-button:hover {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 }
+
+.card-stack {
+  /*fixed*/
+  z-index: 1;
+  position: relative;
+  perspective: 400px;
+  /*customizable*/
+  height: 300px;
+  width: 100%;
+}
+.card-stack-item {
+  /*fixed*/
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  /*customizable*/
+  color: white;
+  text-shadow: 0 0 8px rgba(0,0,0,0.3);
+  box-shadow: 16px 0 16px -7px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform .3s;
+}
+
+.card-stack-item h2 {
+  /*fixed*/
+  margin: 0;
+  /*customizable*/
+  font-size: 32px;
+}
+
+.card-stack-item p {
+  /*customizable*/
+  margin: 0 32px;
+}
+
+
+.card-stack-item:nth-child(1) {
+  /*customizable*/
+  transform: translateZ(-64px) translateX(-8px) rotateY(-36deg);
+}
+.card-stack-item:nth-child(2) {
+  /*customizable*/
+  transform: translateZ(-64px) translateX(-32px) rotateY(-36deg);
+}
+.card-stack-item:nth-child(3) {
+  /*customizable*/
+  transform: translateZ(-64px) translateX(-56px) rotateY(-36deg);
+}
