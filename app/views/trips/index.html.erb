@@ -5,21 +5,30 @@
     Get inspired, discover new destinations, and start planning your own unforgettable journey today!
   </h4>
 
-  <h4> Having a case of wanderlust? Start your own adventure now </h4>
-  <div class="button">
-    <%= link_to "Start your adventure", new_trip_path%>
-  </div>
-</div>
+<div class="cards">
 
   <% @trips.each do |trip| %>
     <div class="card-simple">
+
       <p> <%= "Trip date: #{trip.start_date} - #{trip.end_date} " %> </p>
       <p> <%= "Trip destination: #{trip.destination.name}" %> </p>
         <a class="card-trip-button">See more</a>
-  <%end%>
-        <% @trips.each do |trip| %>
-          <%= cl_image_tag(trip.photo.key, height: 300, width: 400, crop: :fill) %>
-        <% end %>
 
-      </div>
+  <%= cl_image_tag(trip.photo.key, class:"card-simple-image")%>
+
+  <div class="card-simple-text">
+    <div>
+      <h2><%= trip.destination.name %></h2>
+      <p>Budget:<%= trip.budget %></p>
+      <p>Dates: <%= "#{trip.start_date} - #{trip.end_date}" %></p>
+    </div>
+    <a class="card-simple-button" href="https://yannklein.dev/">A button</a>
+  </div>
+</div>
+
+
+  <%end%>
+
+</div>
+
 </div>
