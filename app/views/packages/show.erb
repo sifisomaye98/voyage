@@ -9,31 +9,6 @@
     </div>
 
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1578894381163-e72c17f2d45f?q=80&w=3006&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
-      Escape
-    </div>
-  </div>
-  <div class="container my-3">
-     <h1>
-      Your <%= @package.name%> Awaits ✈️
-    </h1>
-    <p>
-      Imagine waking up to the gentle sound of waves lapping against the shore, the golden sun rising over crystal-clear waters.
-      Your days are filled with breathtaking adventures—strolling along pristine beaches, exploring charming cobblestone streets,
-      and indulging in exquisite local cuisine. Whether you're unwinding in a luxurious oceanfront villa, diving into turquoise lagoons,
-      or savoring a candlelit dinner under the stars, every moment is pure bliss.
-      Escape the ordinary and embrace the extraordinary—your dream holiday awaits.
-    </p>
-    <p>
-  </div>
-  <div class="container flights info my-3">
-   <p> You will be flying with <%= @package.flight.airline %> </p>
-   <p> You flight leaves from <%= @package.flight.departure %> </p>
-    <p> It lands at <%= @package.flight.arrival %> </p>
-    <p> The price for your flight is R<%= @package.flight.price %> </p>
-  </div>
-  <div class="container flights info my-3">
-    <p> You will be staying at the <%= @package.hotel.name %> </p>
-   <p> The room has a daily rate of R <%= @package.hotel.price_per_night %> </p>
-   <p> Your hotel is in <%= @package.hotel.location%> </p>
-  </div>
+    <p><%= @content %> </p>
+
 </div>

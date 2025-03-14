@@ -6,19 +6,15 @@ class TripsController < ApplicationController
   end
 
   def show
-    # Initialize OpenAI client and get response
+    @trip = Trip.find(params[:id])
     client = OpenAI::Client.new
     chatgpt_response = client.chat(parameters: {
       model: "gpt-4o-mini",
-      messages: [{ role: "user", content: "Give me 5 travel packages to different cities for each #{Package.categories} ."}]
+      messages: [{ role: "user", content: "Give me a travel package for #{@trip.category} trip to #{@trip.destination.name} and a budget of #{@trip.budget}. Give me only the description of the packages, without any of your own answer like 'Here is a travel package."}]
     })
-
-    # Check if response is correctly formatted
-    if chatgpt_response["choices"].present?
-      @content = chatgpt_response["choices"][0]["message"]["content"]
-    else
-      @content = "No content available from the API."
-    end
+    @content = chatgpt_response["choices"][0]["message"]["content"]
+    @packages = Package.all
+    #packages don't belong to a user will get from chatGPT
   end
 
   def new

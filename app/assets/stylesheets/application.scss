@@ -15,4 +15,26 @@
 
 body {
   background-color: $light-yellow ;
+  p {
+    font-family: "Karla", sans-serif;
+    color: black;
+    font-size: 1em;
+  }
+  h1 {
+    text-align: center;
+    color: #531f37;
+    font-size: 3em;
+    font-family: "Irish Grover", system-ui;
+    font-weight: 300px;
+    padding: 2rem;
+    // font-style: normal;
+   }
+  h2 {
+    text-align: center;
+    color: #531f37;
+    font-family: "Irish Grover", system-ui;
+    font-size: 3em;
+    font-weight: 300px;
+    //  font-style: normal;
+  }
 }
