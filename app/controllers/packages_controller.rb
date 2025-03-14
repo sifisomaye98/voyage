@@ -1,5 +1,17 @@
 class PackagesController < ApplicationController
   before_action :set_package, only: [:show, :edit, :update]
+  def index
+    @packages = Package.all
+  end
+
+  def new
+    @package = Package.new
+  end
+
+  def create
+    @package = Package.new(params[:package])
+    @package.save # Will raise ActiveModel::ForbiddenAttributesError
+  end
 
   def show
     # Initialize OpenAI client and get response
