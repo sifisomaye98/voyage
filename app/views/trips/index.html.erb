@@ -9,6 +9,11 @@
 
   <% @trips.each do |trip| %>
     <div class="card-simple">
+
+      <p> <%= "Trip date: #{trip.start_date} - #{trip.end_date} " %> </p>
+      <p> <%= "Trip destination: #{trip.destination.name}" %> </p>
+        <a class="card-trip-button">See more</a>
+
   <%= cl_image_tag(trip.photo.key, class:"card-simple-image")%>
 
   <div class="card-simple-text">
@@ -20,6 +25,7 @@
     <a class="card-simple-button" href="https://yannklein.dev/">A button</a>
   </div>
 </div>
+
 
   <%end%>
 

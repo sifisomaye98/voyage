@@ -2,19 +2,27 @@
 <!--FIRST GET TO CHOOSE PACKAGE-->
 <!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
 <div class="container">
-  <h2><%="Your trip budget is: R#{@trip.budget} " %></h2>
-  <p><%= "start date #{@trip.start_date}" %></p>
-  <p><%= "end date #{@trip.end_date}" %></p>
+  <h2><%= "Your trip budget is: R#{@trip.budget} " %></h2>
+  <p><%= "Start date: #{@trip.start_date}" %></p>
+  <p><%= "End date: #{@trip.end_date}" %></p>
+  <p><%= "Trip destination: #{@trip.destination.name}" %></p>
 </div>
 
 <div class="container">
-  <% @packages.each do |package| %>
-    <div class="card-packages">
-      <h1> <%= Package.humanized_categories[package.category.to_sym]%> </h1>
-      <p> <%= link_to package.name, package_path(package) %> </p>
-      <%# package.picture - cloudinary as a carousel%>
-      <%# package.category - name in the center %>
-      <%# package.name - as a text p tag  %>
-    </div>
-  <% end %>
+  <div class="card-stack">
+    <% has_packages = false %>
+    <% @packages.each do |package| %>
+      <% if package.name.include?(@trip.destination.name) %>
+        <% has_packages = true %>
+        <%= link_to package_path(package), class: "card-stack-item", style: "background-image: url('#{cl_image_path(package.photos.first.key)}');" do %>
+          <h2><%= Package.humanized_categories[package.category.to_sym] %></h2>
+          <p><%= package.name %></p>
+        <% end %> <!-- Closing link_to do-block -->
+      <% end %> <!-- Closing if statement -->
+    <% end %> <!-- Closing each loop -->
+
+    <% unless has_packages %>
+      <p>There are no packages for your destination</p>
+    <% end %>
+  </div>
 </div>

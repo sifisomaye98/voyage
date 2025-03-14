@@ -22,6 +22,9 @@ class TripsController < ApplicationController
     @trip.user = current_user
     if @trip.save!
       # CALL THE METHOD FOR CHAT TO GENERATE PACKAGES
+      # Package.categories.each do |cat|
+      #   Package.find_or_create(name: "#{@trip.destination} #{cat}")
+      # end
       redirect_to trip_path(@trip)
     else
       render :new, status: :unprocessable_entity

@@ -1,7 +1,8 @@
 class Package < ApplicationRecord
   belongs_to :flight
   belongs_to :hotel
-  
+  has_many_attached :photos
+
   enum category: {
     backpacker: 1,
     luxury_traveler: 2,
