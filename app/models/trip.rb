@@ -3,6 +3,7 @@ class Trip < ApplicationRecord
   belongs_to :package, optional: true
   belongs_to :destination
   has_many :itineraries
+  has_one_attached :photo
 
   # method to generate optional packages for a trip
 
