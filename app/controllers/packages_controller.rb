@@ -27,11 +27,12 @@ class PackagesController < ApplicationController
 
   private
 
+  def package_params
+    params.require(:package).permit(:category, :name, photos: [])
+  end
+
   def set_package
     @package = Package.find(params[:id])
   end
 
-  def package_params
-    params.require(:package).permit(:category, :name)
-  end
 end

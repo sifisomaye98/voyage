@@ -1,5 +1,26 @@
+  <div class="background_image">
+     <h1>Voyage</h1>
+    <h1>The world is a click away</h1>
+  </div>
+<div class="container">
+  <div class="cards">
 
-<div class="background_image">
-<h1>Voyage</h1>
-      <p>The world is a click away</p>
+  <% @trips.each do |trip| %>
+    <div class="card-simple">
+  <%= cl_image_tag(trip.photo.key, class:"card-simple-image")%>
+
+  <div class="card-simple-text">
+    <div>
+      <h2><%= trip.destination.name %></h2>
+      <p>budget:<%= trip.budget %></p>
+      <p>dates: <%= "#{trip.start_date} - #{trip.end_date}" %></p>
+    </div>
+    <a class="card-simple-button" href="https://yannklein.dev/">"See more"</a>
+  </div>
+</div>
+
+  <%end%>
+
+</div>
+
 </div>
