@@ -1,26 +1,23 @@
   <div class="background_image">
      <h1>Voyage</h1>
-    <h1>The world is a click away</h1>
-  </div>
-<div class="container">
-  <div class="cards">
+    <h2 class="mb-2">The world is a click away</h2>
+    <!--<div class= "trip-form">-->
+    <div class="container">
+      <%= simple_form_for(@trip, html: { class:"trip-form"}) do |f| %>
+        <p>Start planning your next adventure</p>
+        <%= f.association :destination %>
 
-  <% @trips.each do |trip| %>
-    <div class="card-simple">
-  <%= cl_image_tag(trip.photo.key, class:"card-simple-image")%>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
 
-  <div class="card-simple-text">
-    <div>
-      <h2><%= trip.destination.name %></h2>
-      <p>budget:<%= trip.budget %></p>
-      <p>dates: <%= "#{trip.start_date} - #{trip.end_date}" %></p>
+        <%= f.input :budget, wrapper_html: { class: "form-flex"}  %>
+        <%= f.submit class: "card-simple-button" %>
+      <% end %>
+    <!--</div>-->
     </div>
-    <a class="card-simple-button" href="https://yannklein.dev/">"See more"</a>
+
+
   </div>
-</div>
 
-  <%end%>
-
-</div>
 
 </div>
