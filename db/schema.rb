@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_13_134648) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_14_131513) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -83,12 +83,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_134648) do
   end
 
   create_table "packages", force: :cascade do |t|
-    t.bigint "flight_id", null: false
-    t.bigint "hotel_id", null: false
-    t.integer "category"
+    t.bigint "flight_id"
+    t.bigint "hotel_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
     t.index ["flight_id"], name: "index_packages_on_flight_id"
     t.index ["hotel_id"], name: "index_packages_on_hotel_id"
   end
@@ -102,6 +102,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_134648) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category"
     t.index ["destination_id"], name: "index_trips_on_destination_id"
     t.index ["package_id"], name: "index_trips_on_package_id"
     t.index ["user_id"], name: "index_trips_on_user_id"
@@ -124,6 +125,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_134648) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "infos", "destinations"
   add_foreign_key "itineraries", "trips"
+  add_foreign_key "packages", "flights"
+  add_foreign_key "packages", "hotels"
   add_foreign_key "trips", "destinations"
   add_foreign_key "trips", "packages"
   add_foreign_key "trips", "users"
