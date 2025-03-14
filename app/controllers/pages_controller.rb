@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @trips = Trip.all
+    @trip = Trip.new
   end
 end
