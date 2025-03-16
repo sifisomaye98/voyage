@@ -1,34 +1,36 @@
-
 <!--FIRST GET TO CHOOSE PACKAGE-->
 <!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
 <div class="container">
-  <h2><%= "Your trip budget is: R#{@trip.budget} " %></h2>
+  <h2><%= "Your trip budget is: R#{@trip.budget}" %></h2>
   <p><%= "Start date: #{@trip.start_date}" %></p>
   <p><%= "End date: #{@trip.end_date}" %></p>
   <p><%= "Trip destination: #{@trip.destination.name}" %></p>
-</div>
-
-<div class="container">
-  <div class="card-stack">
+  <p><%= Trip.humanized_categories[@trip.category.to_sym] %></p>
+  <div class="cards">
     <% has_packages = false %>
-    <% @packages.each do |package| %>
-      <% if package.name.include?(@trip.destination.name) %>
-        <% has_packages = true %>
-        <%= link_to package_path(package), class: "card-stack-item", style: "background-image: url('#{cl_image_path(package.photos.first.key)}');" do %>
-          <!--<h2><%#= Package.humanized_categories[package.category.to_sym] %></h2>-->
-          <p><%= package.name %></p>
-        <% end %>
-      <% end %>
-    <% end %>
-
-    <% unless has_packages %>
-      <p>There are no packages for your destination</p>
-    <% end %>
-  </div>
-  <p>
-  <%= @content %>
-  </p>
-  
-   <!--Iterate over the content to display on their own card.-->
-   <!--Use AI to set_photo method-->
-</div>
+    <%# @packages.each do |package| %>
+      <%# if package.name.include?(@trip.destination.name) %>
+      <%# has_packages = true %>
+      <!--        --><%#= link_to package_path(package) do %>
+        <!--          <div class="card-simple">
+            <p class="card-simple-text"><%#= package.name %></p>
+            <p><%#= @content %></p>
+          </div>
+        <%# end %>-->
+        <%# end %>
+        <%# end %>
+        <% @package.content.each do |package_description| %>
+          <%#= link_to package_path(package) do %>
+            <% has_packages = true %>
+            <div class="card-simple">
+              <p class="card-simple-text"><%= package_description %></p>
+              <%= cl_image_tag package.photo.key, alt: "AI-generated image of the package destination" if package.photo.attached? %>
+            </div>
+          <% end %>
+          <% unless has_packages %>
+            <p>There are no packages for your destination</p>
+          <% end %>
+        </div>
+      </div>
+      <!--Iterate over the content to display on their own card.-->
+      <!--Use AI to set_photo method-->

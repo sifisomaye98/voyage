@@ -1,3 +1,4 @@
+require "open-uri"
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update]
 
@@ -7,14 +8,9 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-    client = OpenAI::Client.new
-    chatgpt_response = client.chat(parameters: {
-      model: "gpt-4o-mini",
-      messages: [{ role: "user", content: "Give me a travel package for #{@trip.category} trip to #{@trip.destination.name} and a budget of #{@trip.budget}. Give me only the description of the packages, without any of your own answer like 'Here is a travel package."}]
-    })
-    @content = chatgpt_response["choices"][0]["message"]["content"]
+    @content = Package.new.content(@trip)
+    @package_photo = Package.new.set_photo(@trip)
     @packages = Package.all
-    #packages don't belong to a user will get from chatGPT
   end
 
   def new
@@ -51,10 +47,11 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :budget, :destination_id, :photo)
+    params.require(:trip).permit(:start_date, :end_date, :budget, :destination_id)
   end
 
   def set_trip
     @trip = Trip.find(params[:id])
   end
+
 end
