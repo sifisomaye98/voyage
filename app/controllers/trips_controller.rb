@@ -1,4 +1,3 @@
-require "open-uri"
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update]
 
@@ -8,8 +7,15 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-    @content = Package.new.content(@trip)
-    @package_photo = Package.new.set_photo(@trip)
+    @packages_array = Package.content(@trip)
+    @ai_packages = @packages_array.first(5).map do |description|
+      package = Package.create!(
+        name: "#{@trip.category} package to #{@trip.destination.name}",
+        description: description
+      )
+      package.set_photo(@trip)
+    end
+
     @packages = Package.all
   end
 

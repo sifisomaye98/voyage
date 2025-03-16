@@ -19,14 +19,19 @@
         <%# end %>-->
         <%# end %>
         <%# end %>
-        <% @package.content.each do |package_description| %>
-          <%#= link_to package_path(package) do %>
+        <% @ai_packages.each do |package| %>
+          <%= link_to package_path(package) do %>
             <% has_packages = true %>
             <div class="card-simple">
-              <p class="card-simple-text"><%= package_description %></p>
-              <%= cl_image_tag package.photo.key, alt: "AI-generated image of the package destination" if package.photo.attached? %>
+              <p class="card-simple-text"><%= package.description%></p>
+              <% if package.photo.attached? %>
+                <%= cl_image_tag(package.photo.key, alt: "AI-generated image of the package destination", class:"card-simple-image" ) %>
+              <% else %>
+                <p> No image available for package</p>
+              <% end %>
             </div>
           <% end %>
+        <% end %>
           <% unless has_packages %>
             <p>There are no packages for your destination</p>
           <% end %>

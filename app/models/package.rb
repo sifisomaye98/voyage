@@ -4,20 +4,22 @@ class Package < ApplicationRecord
   belongs_to :hotel, optional: true
   has_one_attached :photo
 
-  def content(trip)
+  def self.content(trip)
     client = OpenAI::Client.new
     chatgpt_response = client.chat(parameters: {
       model: "gpt-4o-mini",
-      messages: [{ role: "user", content: "Give me 5 different travel packages for #{trip.category} trip to #{trip.destination.name} with a budget of #{trip.budget}. Give me only the description of the packages, without any of your own answer like 'Here is a travel package."}]
+      messages: [{ role: "user", content: "Please generate 5 travel packages for  #{trip.category} to #{trip.destination.name} with a budget of #{trip.budget} from #{trip.start_date} to #{trip.end_date}. The packages should be specific to #{trip.category} trips, and they must be related to #{trip.destination.name}. Do not include any packages for other categories or destinations."}]
     })
     response_text = chatgpt_response["choices"][0]["message"]["content"]
-    response_text.split("\n\n")
+    descriptions = response_text.split("\n\n")
+    descriptions.first(5)
   end
 
   def set_photo(trip)
     client = OpenAI::Client.new
     response = client.images.generate(parameters: {
-      prompt: "A wanderlust travel image of #{trip.destination.name}"
+      prompt: "A wanderlust travel image of #{trip.destination.name}",
+      n: 1
     })
 
     url = response["data"][0]["url"]
