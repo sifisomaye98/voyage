@@ -1,6 +1,7 @@
 require "open-uri"
 
 puts "Destroying all records..."
+Journal.destroy_all
 Trip.destroy_all
 Package.destroy_all
 Itinerary.destroy_all
@@ -9,6 +10,8 @@ Hotel.destroy_all
 Flight.destroy_all
 User.destroy_all
 Destination.destroy_all
+puts "All existing journal entries deleted."
+
 
 puts "Seeding Destinations..."
 paris = Destination.create!(name: "Paris")
@@ -164,6 +167,7 @@ trip5 = Trip.create!(
   package_id: package5.id,
   destination_id: sydney.id
 )
+puts "Trip for Sydney created."
 
 #Attaching one photo to each trip
 file = URI.parse("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1\?q\=80\&w\=2940\&auto\=format\&fit\=crop\&ixlib\=rb-4.0.3\&ixid\=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open #photo1
@@ -302,3 +306,34 @@ file2 = URI.parse("https://plus.unsplash.com/premium_photo-1663013123196-f83dece
 package20.photos.attach(io: file1, filename: "pack20.jpg", content_type: "image/png")
 package20.photos.attach(io: file2, filename: "package20.jpg", content_type: "image/jpeg")
 package20.save
+puts "pictures uploaded."
+
+journal1 = Journal.create!(
+  content: "Excited to explore the beautiful city of Paris! Can't wait to see the Eiffel Tower and try some delicious French cuisine.",
+  trip_id: trip1.id
+)
+puts "Journal entry for Paris trip created."
+
+journal2 = Journal.create!(
+  content: "New York, here I come! Looking forward to experiencing the city that never sleeps, visiting Times Square, and catching a Broadway show.",
+  trip_id: trip2.id
+)
+puts "Journal entry for New York trip created."
+
+journal3 = Journal.create!(
+  content: "Tokyo adventure awaits! I'm eager to explore Shibuya, try authentic sushi, and immerse myself in the vibrant culture.",
+  trip_id: trip3.id
+)
+puts "Journal entry for Tokyo trip created."
+
+journal4 = Journal.create!(
+  content: "London calling! Excited to visit Buckingham Palace, ride the London Eye, and enjoy a classic English afternoon tea.",
+  trip_id: trip4.id
+)
+puts "Journal entry for London trip created."
+
+journal5 = Journal.create!(
+  content: "Sydney, here I come! Looking forward to seeing the Sydney Opera House, relaxing on Bondi Beach, and exploring the city.",
+  trip_id: trip5.id
+)
+puts "Journal entry for Sydney trip created."

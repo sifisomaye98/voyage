@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_13_134648) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_17_091559) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -82,6 +82,16 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_134648) do
     t.index ["trip_id"], name: "index_itineraries_on_trip_id"
   end
 
+  create_table "journals", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "trip_id", null: false
+    t.index ["trip_id"], name: "index_journals_on_trip_id"
+  end
+
   create_table "packages", force: :cascade do |t|
     t.bigint "flight_id", null: false
     t.bigint "hotel_id", null: false
@@ -124,6 +134,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_13_134648) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "infos", "destinations"
   add_foreign_key "itineraries", "trips"
+  add_foreign_key "journals", "trips"
   add_foreign_key "trips", "destinations"
   add_foreign_key "trips", "packages"
   add_foreign_key "trips", "users"

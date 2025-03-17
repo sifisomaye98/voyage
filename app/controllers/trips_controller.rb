@@ -20,14 +20,22 @@ class TripsController < ApplicationController
     # destination = Destination.find(params[:trip][:destination_id])
     # @trip.destination = destination
     @trip.user = current_user
+
     if @trip.save!
       # CALL THE METHOD FOR CHAT TO GENERATE PACKAGES
       # Package.categories.each do |cat|
       #   Package.find_or_create(name: "#{@trip.destination} #{cat}")
       # end
+      #### make journals here
+
+
+      @trip.duration.to_i.times do |i|
+        @trip.journals.create!(date: @trip.start_date + i)
+
+      end
       redirect_to trip_path(@trip)
     else
-      render :new, status: :unprocessable_entity
+      redirect_to root_path
     end
   end
 
@@ -45,7 +53,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :budget, :destination_id, :photo)
+    params.require(:trip).permit(:start_date, :end_date, :budget, :destination_id)
   end
 
   def set_trip
