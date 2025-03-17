@@ -5,6 +5,28 @@
   <p><%= "Start date: #{@trip.start_date}" %></p>
   <p><%= "End date: #{@trip.end_date}" %></p>
   <p><%= "Trip destination: #{@trip.destination.name}" %></p>
+</div>
+
+<<!--div class="container">
+  <div class="card-stack">
+    <%# has_packages = false %>-->
+    <%# @packages.each do |package| %>
+      <%# if package.name.include?(@trip.destination.name) %>
+        <%# has_packages = true %>
+        <%#= link_to package_path(package), class: "card-stack-item", style: "background-image: url('#{cl_image_path(package.photos.first.key)}');" do %>
+<!--          <h2><%#= Package.humanized_categories[package.category.to_sym] %></h2>
+          <p><%#= package.name %></p>
+        <%# end %> <!-- Closing link_to do-block -->-->
+      <%# end %> <!-- Closing if statement -->
+    <%# end %> <!-- Closing each loop -->
+<!---->
+    <%# unless has_packages %>
+<!--      <p>There are no packages for your destination</p>-->
+    <%# end %>
+  </div>
+</div>
+
+<%= link_to "journal", (@trip), class:"card-simple-button"  %>
   <!--<p><%#= Trip.humanized_categories[@trip.category.to_sym] %></p>-->
   <div class="cards">
     <% if @trip.package %>

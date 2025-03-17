@@ -18,5 +18,5 @@ Rails.application.routes.draw do
     # resources :itineraries, only: [:show, :new, :update]
     # resources :destination
   end
-  # resources :packages, only: [:edit, :update, :show]
+  resources :journals, only: [:show]
 end

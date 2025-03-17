@@ -2,6 +2,7 @@
      <h1>Voyage</h1>
     <h2 class="mb-2">The world is a click away</h2>
     <!--<div class= "trip-form">-->
+
     <div class="container">
       <%= simple_form_for(@trip, html: { class:"trip-form"}) do |f| %>
         <p>Start planning your next adventure</p>
@@ -11,6 +12,7 @@
         <%= f.input :end_date %>
         <%= f.input :category, as: :select, collection: Trip.humanized_categories.keys, include_blank: false, label_method: lambda { |key| Trip.humanized_categories[key] }, prompt: "Select Category" %>
         <%= f.input :budget, wrapper_html: { class: "form-flex"}  %>
+
         <%= f.submit class: "card-simple-button" %>
       <% end %>
     <!--</div>-->

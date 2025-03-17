@@ -21,6 +21,7 @@ class TripsController < ApplicationController
     destination = Destination.find(params[:trip][:destination_id])
     @trip.destination = destination
     @trip.user = current_user
+
     if @trip.save!
       @trip_packages = @trip.generate_packages
     # raise
@@ -28,9 +29,16 @@ class TripsController < ApplicationController
       # Package.categories.each do |cat|
       #   Package.find_or_create(name: "#{@trip.destination} #{cat}")
       # end
-      redirect_to trip_path(@trip, trip_packages: @trip_packages)
+      #### make journals here
+
+
+      @trip.duration.to_i.times do |i|
+        @trip.journals.create!(date: @trip.start_date + i)
+
+      end
+      redirect_to trip_path(@trip)
     else
-      render :new, status: :unprocessable_entity
+      redirect_to root_path
     end
   end
 
