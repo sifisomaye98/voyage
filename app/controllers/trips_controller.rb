@@ -7,16 +7,9 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-    @packages_array = Package.content(@trip)
-    @ai_packages = @packages_array.first(5).map do |description|
-      package = Package.create!(
-        name: "#{@trip.category} package to #{@trip.destination.name}",
-        description: description
-      )
-      package.set_photo(@trip)
-    end
-
-    @packages = Package.all
+    @trip_packages = params[:trip_packages]&.map { |package_id| Package.find(package_id) } || []
+    # @trip_description = extract_packages(@trip.description) #formatinng the packages
+    # @trip_packages = params[:trip_packages].map { |package_id| Package.find(package_id) }
   end
 
   def new
@@ -25,15 +18,17 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    # destination = Destination.find(params[:trip][:destination_id])
-    # @trip.destination = destination
+    destination = Destination.find(params[:trip][:destination_id])
+    @trip.destination = destination
     @trip.user = current_user
     if @trip.save!
+      @trip_packages = @trip.generate_packages
+    # raise
       # CALL THE METHOD FOR CHAT TO GENERATE PACKAGES
       # Package.categories.each do |cat|
       #   Package.find_or_create(name: "#{@trip.destination} #{cat}")
       # end
-      redirect_to trip_path(@trip)
+      redirect_to trip_path(@trip, trip_packages: @trip_packages)
     else
       render :new, status: :unprocessable_entity
     end
@@ -53,7 +48,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :budget, :destination_id)
+    params.require(:trip).permit(:start_date, :end_date, :budget, :destination_id, :category)
   end
 
   def set_trip
