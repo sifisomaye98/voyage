@@ -1,7 +1,7 @@
 <!--FIRST GET TO CHOOSE PACKAGE-->
 <!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
 <div class="container">
-  <h2><%= "Your trip budget is: R#{@trip.budget}" %></h2>
+  <h2><%= "Your trip budget is: $#{@trip.budget}" %></h2>
   <p><%= "Start date: #{@trip.start_date}" %></p>
   <p><%= "End date: #{@trip.end_date}" %></p>
   <p><%= "Trip destination: #{@trip.destination.name}" %></p>
@@ -33,18 +33,19 @@
       <p>show package</p>
     <% else %>
       <% @trip_packages.each do |package| %>
-        <%= link_to package_path(package) do %>
+        <%#= link_to package_path(package) do %>
           <div class="card-simple">
             <% if package.photo.attached? %>
               <%= cl_image_tag(package.photo.key, alt: "AI-generated image of the package destination", class:"card-simple-image" ) %>
             <% else %>
               <p> No image available for package</p>
             <% end %>
-            <div class="card-simple-text p-3">
+            <div class="card-simple-text p-3, mb-3">
               <p ><%= clean_and_format_description(package.description)%></p>
+               <%=  button_to "Choose package", set_package_trip_package_path(@trip, package), class:"card-simple-button" %>
             </div>
           </div>
-        <% end %>
+        <%# end %>
       <% end %>
     <% end %>
   </div>

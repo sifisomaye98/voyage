@@ -6,7 +6,8 @@
     <div class="container">
       <%= simple_form_for(@trip, html: { class:"trip-form"}) do |f| %>
         <p>Start planning your next adventure</p>
-        <%= f.association :destination %>
+        <%= f.association :destination, collection: Destination.order(:name) %>
+        <%#= f.association :destination %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
         <%= f.input :category, as: :select, collection: Trip.humanized_categories.keys, include_blank: false, label_method: lambda { |key| Trip.humanized_categories[key] }, prompt: "Select Category" %>

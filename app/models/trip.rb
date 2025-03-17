@@ -59,5 +59,4 @@ class Trip < ApplicationRecord
   #   })
   #   return chatgpt_response["choices"][0]["message"]["content"]
   # end
-
 end
