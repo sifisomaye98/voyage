@@ -93,12 +93,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_091559) do
   end
 
   create_table "packages", force: :cascade do |t|
-    t.bigint "flight_id", null: false
-    t.bigint "hotel_id", null: false
-    t.integer "category"
+    t.bigint "flight_id"
+    t.bigint "hotel_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
     t.index ["flight_id"], name: "index_packages_on_flight_id"
     t.index ["hotel_id"], name: "index_packages_on_hotel_id"
   end
@@ -112,6 +112,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_091559) do
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category"
     t.index ["destination_id"], name: "index_trips_on_destination_id"
     t.index ["package_id"], name: "index_trips_on_package_id"
     t.index ["user_id"], name: "index_trips_on_user_id"

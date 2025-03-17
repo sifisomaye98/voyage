@@ -1,22 +1,21 @@
+require "open-uri"
 class Package < ApplicationRecord
-  belongs_to :flight
-  belongs_to :hotel
-  has_many_attached :photos
+  belongs_to :flight, optional: true
+  belongs_to :hotel, optional: true
+  has_one_attached :photo
 
-  enum category: {
-    backpacker: 1,
-    luxury_traveler: 2,
-    adventure_seeker: 3,
-    cultural_explorer: 4,
-    family_vacationer: 5
-  }
-  def self.humanized_categories
-    {
-      backpacker: "Backpacker",
-      luxury_traveler: "Luxury Traveller",
-      adventure_seeker: "Adventure Seeker",
-      cultural_explorer: "Cultural Explorer",
-      family_vacationer: "Family Vacationer"
-    }
+  def set_photo(trip)
+    client = OpenAI::Client.new
+    response = client.images.generate(parameters: {
+      prompt: "A wanderlust travel image of #{trip.destination.name}",
+      n: 1
+    })
+
+    url = response["data"][0]["url"]
+    file = URI.parse(url).open
+
+    photo.purge if photo.attached?
+    photo.attach(io: file, filename: "ai_generated_image.jpg", content_type: "image/png")
+    return photo
   end
 end

@@ -1,8 +1,11 @@
+<h1>create your own trip</h1>
+
 <%= simple_form_for(trip) do |f| %>
   <%= f.input :budget %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
+  <%= f.input :category %>
   <%= f.association :destination %>
-  <%= f.input :photo, as: :file %>
+  <%#= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>

@@ -1,5 +1,5 @@
 class PackagesController < ApplicationController
-  before_action :set_package, only: [:show, :edit, :update]
+  before_action :set_package, only: [:show]
 
   def show
   end
@@ -10,21 +10,21 @@ class PackagesController < ApplicationController
     # set_package
   # end
 
-  def update
-    if @package.update(package_params)
-      redirect_to package_path(@package)
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
+  # def update
+  #   if @package.update(package_params)
+  #     redirect_to package_path(@package)
+  #   else
+  #     render :edit, status: :unprocessable_entity
+  #   end
+  # end
   private
 
-  def package_params
-    params.require(:package).permit(:category, :name, photos: [])
-  end
+  # def package_params
+  #   params.require(:package).permit(:description, :name, photos: [])
+  # end
 
   def set_package
     @package = Package.find(params[:id])
   end
+
 end
