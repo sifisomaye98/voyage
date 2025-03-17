@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<%= link_to "journal", (@trip), class:"card-simple-button"  %>
+<%= link_to "journal", trip_journals_path(@trip), class:"card-simple-button"  %>
   <!--<p><%#= Trip.humanized_categories[@trip.category.to_sym] %></p>-->
   <div class="cards">
     <% if @trip.package %>

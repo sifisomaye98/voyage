@@ -8,6 +8,13 @@ class JournalsController < ApplicationController
     @journal = Journal.find(params[:id])
   end
 
+  def update
+    @journal = Journal.find(params[:id])
+    @journal.update(journal_params)
+    # No need for app/views/restaurants/update.html.erb
+    redirect_to journal_path(@journal)
+  end
+
   def create
     @journal = Journal.new(journal_params)
     @journal.save
