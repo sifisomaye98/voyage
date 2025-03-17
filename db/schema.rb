@@ -136,6 +136,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_091559) do
   add_foreign_key "infos", "destinations"
   add_foreign_key "itineraries", "trips"
   add_foreign_key "journals", "trips"
+  add_foreign_key "packages", "flights"
+  add_foreign_key "packages", "hotels"
   add_foreign_key "trips", "destinations"
   add_foreign_key "trips", "packages"
   add_foreign_key "trips", "users"
