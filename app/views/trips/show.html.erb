@@ -7,14 +7,16 @@
   <div class="d-flex justify-content-center">
     <p> You are going away for a magical <%= (@trip.end_date - @trip.start_date).to_i %> days </p>
   </div>
-  <div class="card-simple">
-    <% if @trip.package.photo.attached? %>
-      <%= cl_image_tag(@trip.package.photo.key, alt: "AI-generated image of the package destination", class:"card-simple-image" ) %>
-    <% else %>
-      <p> No image available for package</p>
-    <% end %>
-    <div class="card-simple-text p-3, mb-3">
-      <%= clean_and_format_description(@trip.package.description) %>
+  <div class="cards">
+    <div class="card-simple">
+      <% if @trip.package.photo.attached? %>
+        <%= cl_image_tag(@trip.package.photo.key, alt: "AI-generated image of the package destination", class:"card-simple-image" ) %>
+      <% else %>
+        <p> No image available for package</p>
+      <% end %>
+      <div class="card-simple-text p-3, mb-3">
+        <%= clean_and_format_description(@trip.package.description) %>
+      </div>
     </div>
   </div>
   <div class="container p-3">
