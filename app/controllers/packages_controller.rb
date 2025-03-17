@@ -26,4 +26,5 @@ class PackagesController < ApplicationController
   def set_package
     @package = Package.find(params[:id])
   end
+
 end
