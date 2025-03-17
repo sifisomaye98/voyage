@@ -188,122 +188,122 @@ trip5.photo.attach(io: file, filename: "trip_5.jpg", content_type: "image/png")
 trip5.save!
 
 #Attaching two photos for each package to the seed file
-file1 = URI.parse("https://images.unsplash.com/19/nomad.JPG?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package1.photos.attach(io: file1, filename: "pack1.jpg", content_type: "image/png")
-package1.photos.attach(io: file2, filename: "package1.jpg", content_type: "image/jpeg")
-package1.save
+# file1 = URI.parse("https://images.unsplash.com/19/nomad.JPG?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1530789253388-582c481c54b0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package1.photos.attach(io: file1, filename: "pack1.jpg", content_type: "image/png")
+# package1.photos.attach(io: file2, filename: "package1.jpg", content_type: "image/jpeg")
+# package1.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bHV4dXJ5JTIwdHJhdmVsZXJ8ZW58MHx8MHx8fDA%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1512757776214-26d36777b513?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package2.photos.attach(io: file1, filename: "pack2.jpg", content_type: "image/png")
-package2.photos.attach(io: file2, filename: "package2.jpg", content_type: "image/jpeg")
-package2.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bHV4dXJ5JTIwdHJhdmVsZXJ8ZW58MHx8MHx8fDA%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1512757776214-26d36777b513?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package2.photos.attach(io: file1, filename: "pack2.jpg", content_type: "image/png")
+# package2.photos.attach(io: file2, filename: "package2.jpg", content_type: "image/jpeg")
+# package2.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1604394823436-623c4eaf029b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJhY2twYWNrZXJ8ZW58MHx8MHx8fDA%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1528543606781-2f6e6857f318?q=80&w=2001&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package3.photos.attach(io: file1, filename: "pack3.jpg", content_type: "image/png")
-package3.photos.attach(io: file2, filename: "package3.jpg", content_type: "image/jpeg")
-package3.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1604394823436-623c4eaf029b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJhY2twYWNrZXJ8ZW58MHx8MHx8fDA%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1528543606781-2f6e6857f318?q=80&w=2001&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package3.photos.attach(io: file1, filename: "pack3.jpg", content_type: "image/png")
+# package3.photos.attach(io: file2, filename: "package3.jpg", content_type: "image/jpeg")
+# package3.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://plus.unsplash.com/premium_photo-1680831748734-87103434f0f5?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package4.photos.attach(io: file1, filename: "pack4.jpg", content_type: "image/png")
-package4.photos.attach(io: file2, filename: "package4.jpg", content_type: "image/jpeg")
-package4.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://plus.unsplash.com/premium_photo-1680831748734-87103434f0f5?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package4.photos.attach(io: file1, filename: "pack4.jpg", content_type: "image/png")
+# package4.photos.attach(io: file2, filename: "package4.jpg", content_type: "image/jpeg")
+# package4.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1495706891067-35a06798dbca?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package5.photos.attach(io: file1, filename: "pack5.jpg", content_type: "image/png")
-package5.photos.attach(io: file2, filename: "package5.jpg", content_type: "image/jpeg")
-package5.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1495706891067-35a06798dbca?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package5.photos.attach(io: file1, filename: "pack5.jpg", content_type: "image/png")
+# package5.photos.attach(io: file2, filename: "package5.jpg", content_type: "image/jpeg")
+# package5.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1500627964684-141351970a7f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bHV4dXJ5JTIwdHJhdmVsZXJ8ZW58MHx8MHx8fDA%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2842&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package6.photos.attach(io: file1, filename: "pack6.jpg", content_type: "image/png")
-package6.photos.attach(io: file2, filename: "package6.jpg", content_type: "image/jpeg")
-package6.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1500627964684-141351970a7f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bHV4dXJ5JTIwdHJhdmVsZXJ8ZW58MHx8MHx8fDA%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2842&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package6.photos.attach(io: file1, filename: "pack6.jpg", content_type: "image/png")
+# package6.photos.attach(io: file2, filename: "package6.jpg", content_type: "image/jpeg")
+# package6.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1501761095094-94d36f57edbb?q=80&w=1982&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://plus.unsplash.com/premium_photo-1676122796020-19c6df3a78b5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package7.photos.attach(io: file1, filename: "pack7.jpg", content_type: "image/png")
-package7.photos.attach(io: file2, filename: "package7.jpg", content_type: "image/jpeg")
-package7.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1501761095094-94d36f57edbb?q=80&w=1982&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://plus.unsplash.com/premium_photo-1676122796020-19c6df3a78b5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package7.photos.attach(io: file1, filename: "pack7.jpg", content_type: "image/png")
+# package7.photos.attach(io: file2, filename: "package7.jpg", content_type: "image/jpeg")
+# package7.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1583267575395-8544fb0de4da?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package8.photos.attach(io: file1, filename: "pack8.jpg", content_type: "image/png")
-package8.photos.attach(io: file2, filename: "package8.jpg", content_type: "image/jpeg")
-package8.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1583267575395-8544fb0de4da?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package8.photos.attach(io: file1, filename: "pack8.jpg", content_type: "image/png")
+# package8.photos.attach(io: file2, filename: "package8.jpg", content_type: "image/jpeg")
+# package8.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1503220317375-aaad61436b1b?q=80&w=2449&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package9.photos.attach(io: file1, filename: "pack9.jpg", content_type: "image/png")
-package9.photos.attach(io: file2, filename: "package9.jpg", content_type: "image/jpeg")
-package9.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1503220317375-aaad61436b1b?q=80&w=2449&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package9.photos.attach(io: file1, filename: "pack9.jpg", content_type: "image/png")
+# package9.photos.attach(io: file2, filename: "package9.jpg", content_type: "image/jpeg")
+# package9.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGx1eHVyeSUyMHRyYXZlbGVyfGVufDB8fDB8fHww").open
-file2 = URI.parse("https://plus.unsplash.com/premium_photo-1677343210638-5d3ce6ddbf85?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package10.photos.attach(io: file1, filename: "pack10.jpg", content_type: "image/png")
-package10.photos.attach(io: file2, filename: "package10.jpg", content_type: "image/jpeg")
-package10.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGx1eHVyeSUyMHRyYXZlbGVyfGVufDB8fDB8fHww").open
+# file2 = URI.parse("https://plus.unsplash.com/premium_photo-1677343210638-5d3ce6ddbf85?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package10.photos.attach(io: file1, filename: "pack10.jpg", content_type: "image/png")
+# package10.photos.attach(io: file2, filename: "package10.jpg", content_type: "image/jpeg")
+# package10.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1512036666432-2181c1f26420?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://plus.unsplash.com/premium_photo-1677343210638-5d3ce6ddbf85?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package11.photos.attach(io: file1, filename: "pack11.jpg", content_type: "image/png")
-package11.photos.attach(io: file2, filename: "package11.jpg", content_type: "image/jpeg")
-package11.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1512036666432-2181c1f26420?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://plus.unsplash.com/premium_photo-1677343210638-5d3ce6ddbf85?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package11.photos.attach(io: file1, filename: "pack11.jpg", content_type: "image/png")
+# package11.photos.attach(io: file2, filename: "package11.jpg", content_type: "image/jpeg")
+# package11.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1680695919961-9a47baa429ce?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1617469165786-8007eda3caa7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package12.photos.attach(io: file1, filename: "pack12.jpg", content_type: "image/png")
-package12.photos.attach(io: file2, filename: "package12.jpg", content_type: "image/jpeg")
-package12.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1680695919961-9a47baa429ce?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1617469165786-8007eda3caa7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package12.photos.attach(io: file1, filename: "pack12.jpg", content_type: "image/png")
+# package12.photos.attach(io: file2, filename: "package12.jpg", content_type: "image/jpeg")
+# package12.save
 
-file1 = URI.parse("https://plus.unsplash.com/premium_photo-1683134229594-bfa9f75d5594?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1565076633790-b0deb5d527c7?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package13.photos.attach(io: file1, filename: "pack13.jpg", content_type: "image/png")
-package13.photos.attach(io: file2, filename: "package13.jpg", content_type: "image/jpeg")
-package13.save
+# file1 = URI.parse("https://plus.unsplash.com/premium_photo-1683134229594-bfa9f75d5594?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1565076633790-b0deb5d527c7?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package13.photos.attach(io: file1, filename: "pack13.jpg", content_type: "image/png")
+# package13.photos.attach(io: file2, filename: "package13.jpg", content_type: "image/jpeg")
+# package13.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1522255272218-7ac5249be344?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1674673243921-9e6ab580431f?q=80&w=2896&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package14.photos.attach(io: file1, filename: "pack14.jpg", content_type: "image/png")
-package14.photos.attach(io: file2, filename: "package14.jpg", content_type: "image/jpeg")
-package14.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1522255272218-7ac5249be344?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1674673243921-9e6ab580431f?q=80&w=2896&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package14.photos.attach(io: file1, filename: "pack14.jpg", content_type: "image/png")
+# package14.photos.attach(io: file2, filename: "package14.jpg", content_type: "image/jpeg")
+# package14.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1471400974796-1c823d00a96f?q=80&w=1667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package15.photos.attach(io: file1, filename: "pack15.jpg", content_type: "image/png")
-package15.photos.attach(io: file2, filename: "package15.jpg", content_type: "image/jpeg")
-package15.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1471400974796-1c823d00a96f?q=80&w=1667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package15.photos.attach(io: file1, filename: "pack15.jpg", content_type: "image/png")
+# package15.photos.attach(io: file2, filename: "package15.jpg", content_type: "image/jpeg")
+# package15.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1585604663643-805a4a7ebe23?q=80&w=2939&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://plus.unsplash.com/premium_photo-1675745329954-9639d3b74bbf?q=80&w=2335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package16.photos.attach(io: file1, filename: "pack16.jpg", content_type: "image/png")
-package16.photos.attach(io: file2, filename: "package16.jpg", content_type: "image/jpeg")
-package16.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1585604663643-805a4a7ebe23?q=80&w=2939&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://plus.unsplash.com/premium_photo-1675745329954-9639d3b74bbf?q=80&w=2335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package16.photos.attach(io: file1, filename: "pack16.jpg", content_type: "image/png")
+# package16.photos.attach(io: file2, filename: "package16.jpg", content_type: "image/jpeg")
+# package16.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1520466809213-7b9a56adcd45?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmFja3BhY2tlcnxlbnwwfHwwfHx8MA%3D%3D").open
-file2 = URI.parse("https://plus.unsplash.com/premium_photo-1661964304872-7b715cf38cd1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package17.photos.attach(io: file1, filename: "pack17.jpg", content_type: "image/png")
-package17.photos.attach(io: file2, filename: "package17.jpg", content_type: "image/jpeg")
-package17.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1520466809213-7b9a56adcd45?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmFja3BhY2tlcnxlbnwwfHwwfHx8MA%3D%3D").open
+# file2 = URI.parse("https://plus.unsplash.com/premium_photo-1661964304872-7b715cf38cd1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package17.photos.attach(io: file1, filename: "pack17.jpg", content_type: "image/png")
+# package17.photos.attach(io: file2, filename: "package17.jpg", content_type: "image/jpeg")
+# package17.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1605538032404-d7f061325b90?q=80&w=2582&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1528154291023-a6525fabe5b4?q=80&w=2504&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package18.photos.attach(io: file1, filename: "pack18.jpg", content_type: "image/png")
-package18.photos.attach(io: file2, filename: "package18.jpg", content_type: "image/jpeg")
-package18.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1605538032404-d7f061325b90?q=80&w=2582&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1528154291023-a6525fabe5b4?q=80&w=2504&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package18.photos.attach(io: file1, filename: "pack18.jpg", content_type: "image/png")
+# package18.photos.attach(io: file2, filename: "package18.jpg", content_type: "image/jpeg")
+# package18.save
 
-file1 = URI.parse("https://plus.unsplash.com/premium_photo-1663047386229-637af57cecfe?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://images.unsplash.com/photo-1596120236172-231999844ade?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package19.photos.attach(io: file1, filename: "pack19.jpg", content_type: "image/png")
-package19.photos.attach(io: file2, filename: "package19.jpg", content_type: "image/jpeg")
-package19.save
+# file1 = URI.parse("https://plus.unsplash.com/premium_photo-1663047386229-637af57cecfe?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://images.unsplash.com/photo-1596120236172-231999844ade?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package19.photos.attach(io: file1, filename: "pack19.jpg", content_type: "image/png")
+# package19.photos.attach(io: file2, filename: "package19.jpg", content_type: "image/jpeg")
+# package19.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1570241464320-0a3d89eed76d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://plus.unsplash.com/premium_photo-1663013123196-f83decee810f?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package20.photos.attach(io: file1, filename: "pack20.jpg", content_type: "image/png")
-package20.photos.attach(io: file2, filename: "package20.jpg", content_type: "image/jpeg")
-package20.save
+# file1 = URI.parse("https://images.unsplash.com/photo-1570241464320-0a3d89eed76d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://plus.unsplash.com/premium_photo-1663013123196-f83decee810f?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package20.photos.attach(io: file1, filename: "pack20.jpg", content_type: "image/png")
+# package20.photos.attach(io: file2, filename: "package20.jpg", content_type: "image/jpeg")
+# package20.save

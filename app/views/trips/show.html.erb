@@ -1,34 +1,31 @@
-
 <!--FIRST GET TO CHOOSE PACKAGE-->
 <!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
 <div class="container">
-  <h2><%= "Your trip budget is: R#{@trip.budget} " %></h2>
+  <h2><%= "Your trip budget is: R#{@trip.budget}" %></h2>
   <p><%= "Start date: #{@trip.start_date}" %></p>
   <p><%= "End date: #{@trip.end_date}" %></p>
   <p><%= "Trip destination: #{@trip.destination.name}" %></p>
-</div>
-
-<div class="container">
-  <div class="card-stack">
-    <% has_packages = false %>
-    <% @packages.each do |package| %>
-      <% if package.name.include?(@trip.destination.name) %>
-        <% has_packages = true %>
-        <%= link_to package_path(package), class: "card-stack-item", style: "background-image: url('#{cl_image_path(package.photos.first.key)}');" do %>
-          <!--<h2><%#= Package.humanized_categories[package.category.to_sym] %></h2>-->
-          <p><%= package.name %></p>
+  <!--<p><%#= Trip.humanized_categories[@trip.category.to_sym] %></p>-->
+  <div class="cards">
+    <% if @trip.package %>
+      <p>show package</p>
+    <% else %>
+      <% @trip_packages.each do |package| %>
+        <%= link_to package_path(package) do %>
+          <div class="card-simple">
+            <% if package.photo.attached? %>
+              <%= cl_image_tag(package.photo.key, alt: "AI-generated image of the package destination", class:"card-simple-image" ) %>
+            <% else %>
+              <p> No image available for package</p>
+            <% end %>
+            <div class="card-simple-text p-3">
+              <p ><%= clean_and_format_description(package.description)%></p>
+            </div>
+          </div>
         <% end %>
       <% end %>
     <% end %>
-
-    <% unless has_packages %>
-      <p>There are no packages for your destination</p>
-    <% end %>
   </div>
-  <p>
-  <%= @content %>
-  </p>
-  
-   <!--Iterate over the content to display on their own card.-->
-   <!--Use AI to set_photo method-->
 </div>
+<!--Iterate over the content to display on their own card.-->
+<!--Use AI to set_photo method-->

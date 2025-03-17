@@ -2,7 +2,6 @@ class PackagesController < ApplicationController
   before_action :set_package, only: [:show]
 
   def show
-    
   end
 
   # def edit
@@ -18,12 +17,11 @@ class PackagesController < ApplicationController
   #     render :edit, status: :unprocessable_entity
   #   end
   # end
-
   private
 
-  def package_params
-    params.require(:package).permit(:category, :name, photos: [])
-  end
+  # def package_params
+  #   params.require(:package).permit(:description, :name, photos: [])
+  # end
 
   def set_package
     @package = Package.find(params[:id])
