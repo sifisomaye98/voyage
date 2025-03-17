@@ -4,21 +4,24 @@
     From relaxing beach escapes to thrilling mountain treks, these trips are sure to spark your wanderlust.
     Get inspired, discover new destinations, and start planning your own unforgettable journey today!
   </h4>
-
   <div class="cards">
     <% @trips.each do |trip| %>
-      <div class="card-simple">
-        <%= cl_image_tag(trip.photo.key, class:"card-simple-image")%>
-        <div class="card-simple-text">
-          <div>
-            <h2><%= trip.destination.name %></h2>
-            <p>Budget:<%= trip.budget %></p>
-            <p>Dates: <%= "#{trip.start_date} - #{trip.end_date}" %></p>
+      <%= link_to trip_path(trip) do  %>
+        <div class="card-simple">
+          <% if trip.photo.attached?  %>
+            <%= cl_image_tag(trip.photo.key, class:"card-simple-image")%>
+          <% else %>
+            <%= image_tag("Italy.png", class:"card-simple-image") %>
+          <% end %>
+          <div class="card-simple-text">
+            <div>
+              <h2><%= trip.destination.name %></h2>
+              <p>Budget:<%= trip.budget %></p>
+              <p>Dates: <%= "#{trip.start_date} - #{trip.end_date}" %></p>
+            </div>
           </div>
-          <a class="card-simple-button" href="https://yannklein.dev/"> See more </a>
         </div>
-      </div>
+      <% end %>
     <%end%>
   </div>
 </div>
-
