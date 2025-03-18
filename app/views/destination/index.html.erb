@@ -1,14 +1,13 @@
 <h1>destinations</h1>
-
-
 <% @destinations.each do |destination| %>
   <ul>
     <%= destination.name %>
   </ul>
 <% end %>
-
-<div style="width: 100%; height: 600px;"
+<div class="map">
+<div style="width: 100%; height: 600px; border-radius: 15px"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+</div>

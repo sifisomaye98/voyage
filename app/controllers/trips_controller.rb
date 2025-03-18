@@ -2,7 +2,14 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update]
 
   def index
-    @trips = Trip.all
+    @trips = current_user.trips
+    @destinations = current_user.destinations # change to current user destinations (has many through)
+    @markers = @destinations.geocoded.map do |destination|
+      {
+        lat: destination.latitude,
+        lng: destination.longitude
+      }
+    end
   end
 
   def show
