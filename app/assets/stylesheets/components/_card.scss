@@ -108,6 +108,7 @@
   border-image-slice: 30;
   border-image-repeat: round;
 }
+
 .wrapper {
   width: 400px;
   height: 300px;
@@ -129,4 +130,45 @@ button {
   background-color: #531f37;
   text-decoration: none;
   transition: 0.1s;
+}
+.journal-card{
+  padding: 0.8em;
+  margin-bottom: 2rem;
+  border-width: 10px;
+  width: 35%;
+  text-align: center;
+  border-radius: 24px;
+  background-color: #531f37;
+
+  // border-image: url(https://interactive-examples.mdn.mozilla.net/media/examples/border-diamonds.png);
+  // border-image-slice: 30;
+  // border-image-repeat: round;
+  a{
+    color: rgb(255, 255, 255);
+  }
+
+}
+.journal-container{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 62%;
+  height: 400px; /* Set a fixed height */
+  overflow-y: auto; /* Enables vertical scrolling */
+  -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
+  background: rgba(255, 255, 255, 0.1); /* Glass effect */
+  backdrop-filter: blur(10px) saturate(150%);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: normal;
+  align-content: normal;
+  gap: 10px; /* Spacing between cards */
+}
+.journal-container::-webkit-scrollbar {
+  display: none;
 }

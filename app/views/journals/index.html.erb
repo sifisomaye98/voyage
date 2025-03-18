@@ -1,6 +1,12 @@
 <h1>Adventurer Journal</h1>
-  <% @journals.each do |journal| %>
-    <ul>
-     <li><%= link_to journal.title, journal_path(journal) %></li>
-    </ul>
-  <% end %>
+<div class="animated-bg">
+<%= image_tag('suitcase2.png', class:'suitcase') %>
+<!--<img src="images/suitcase2.png" class="suitcase"/>-->
+</div>
+  <div class="journal-container">
+    <% @journals.each do |journal| %>
+    <div class="journal-card">
+      <%= link_to journal.title, journal_path(journal) %>
+    </div>
+    <% end %>
+  </div>

@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_17_145754) do
-
+ActiveRecord::Schema[7.1].define(version: 2025_03_17_152746) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -149,8 +148,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_145754) do
   add_foreign_key "infos", "destinations"
   add_foreign_key "itineraries", "trips"
   add_foreign_key "journals", "trips"
-  add_foreign_key "packages", "flights"
-  add_foreign_key "packages", "hotels"
   add_foreign_key "trips", "destinations"
   add_foreign_key "trips", "packages"
   add_foreign_key "trips", "users"

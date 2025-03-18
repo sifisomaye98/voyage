@@ -1,0 +1,36 @@
+/* Background Styling */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  // background: linear-gradient(270deg, #f4f4f4, #e0eafc);
+  background-size: 400% 400%;
+  animation: bgAnimation 10s infinite linear;
+  z-index: -1;
+}
+
+/* Suitcase Animation */
+.suitcase {
+  position: absolute;
+  bottom: 10%;
+  left: -10%; // Start off-screen
+  width: 100px; // Adjust size
+  height: auto;
+  animation: moveSuitcase 8s linear infinite;
+}
+
+/* Move the suitcase from left to right */
+@keyframes moveSuitcase {
+  0% { left: -10%; transform: rotate(0deg); }
+  50% { transform: rotate(5deg); } // Slight tilt for realism
+  100% { left: 110%; transform: rotate(0deg); } // Moves off-screen
+}
+
+/* Background Animation */
+@keyframes bgAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
