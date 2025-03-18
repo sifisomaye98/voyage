@@ -7,3 +7,4 @@ module ApplicationHelper
     simple_format(cleaned_description)
   end
 end
+

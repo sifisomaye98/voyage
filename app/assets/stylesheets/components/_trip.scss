@@ -1,0 +1,34 @@
+.trip-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.trip-package-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  padding-right: 6px;
+  padding-left: 6px;
+  margin-bottom: 2rem;
+ }
+
+.trip-package-card {
+ border-radius: 32px;
+ background-color: $light-gray;
+// //  border: 3px solid red;
+
+}
+
+.trip-package-details {
+  padding: 2rem;
+  background-color: $light-gray;
+}
+
+.trip-package-image {
+  width: 100%;
+  // height: 100%;
+  object-fit: contain;
+
+}
