@@ -2,8 +2,17 @@ class Trip < ApplicationRecord
   belongs_to :user
   belongs_to :package, optional: true
   belongs_to :destination
+
+  # has_many :itineraries
+  has_many :journals
   has_one_attached :photo
 
+  def duration
+    number_of_days = end_date - start_date
+    return number_of_days
+  end
+
+  # method to generate optional packages for a trip
   enum category: {
     backpacker: 1,
     luxury_traveler: 2,
@@ -51,5 +60,4 @@ class Trip < ApplicationRecord
   #   })
   #   return chatgpt_response["choices"][0]["message"]["content"]
   # end
-
 end

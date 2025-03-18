@@ -1,0 +1,17 @@
+.icon-heading-container {
+  font-size: medium;
+  display: flex;
+  padding: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  #icon {
+    font-size: 4rem;
+  }
+}
+.trix-button {
+  background-color: white !important;
+}
+.trix-content {
+  background-color: white !important;
+  min-height: 40vh;
+}
