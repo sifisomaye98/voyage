@@ -281,144 +281,14 @@ puts "Info for Mumbai created."
 info24 = Info.create!(visa: "Visa required for most nationalities. Apply at the Mexican embassy.", safety: "Mexico City is relatively safe, but be cautious in certain areas, especially at night.", destination_id: mexico_city.id)
 puts "Info for Mexico City created."
 
-
-puts "Seeding Packages..."
-package1 = Package.create!(name: "Paris Backpacker", flight_id: flight1.id, hotel_id: hotel1.id)
-puts "Package 'Paris Backpacker' created."
-package2 = Package.create!(name: "Paris Luxury", flight_id: flight1.id, hotel_id: hotel1.id)
-puts "Package 'Paris Luxury' created."
-package3 = Package.create!(name: "Paris Adventure", flight_id: flight1.id, hotel_id: hotel1.id)
-puts "Package 'Paris Adventure' created."
-package4 = Package.create!(name: "Paris Culture", flight_id: flight1.id, hotel_id: hotel1.id)
-puts "Package 'Paris Culture' created."
-
-package5 = Package.create!(name: "New York Backpacker", flight_id: flight3.id, hotel_id: hotel2.id)
-puts "Package 'New York Backpacker' created."
-package6 = Package.create!(name: "New York Luxury", flight_id: flight3.id, hotel_id: hotel2.id)
-puts "Package 'New York Luxury' created."
-package7 = Package.create!(name: "New York Adventure", flight_id: flight3.id, hotel_id: hotel2.id)
-puts "Package 'New York Adventure' created."
-package8 = Package.create!(name: "New York Culture", flight_id: flight3.id, hotel_id: hotel2.id)
-puts "Package 'New York Culture' created."
-
-puts "Seeding Packages for Tokyo..."
-package9 = Package.create!(name: "Tokyo Backpacker", flight_id: flight2.id, hotel_id: hotel3.id)
-puts "Package 'Tokyo Backpacker' created."
-package10 = Package.create!(name: "Tokyo Luxury", flight_id: flight2.id, hotel_id: hotel3.id)
-puts "Package 'Tokyo Luxury' created."
-package11 = Package.create!(name: "Tokyo Adventure", flight_id: flight2.id, hotel_id: hotel3.id)
-puts "Package 'Tokyo Adventure' created."
-package12 = Package.create!(name: "Tokyo Culture", flight_id: flight2.id, hotel_id: hotel3.id)
-puts "Package 'Tokyo Culture' created."
-
-puts "Seeding Packages for London..."
-package13 = Package.create!(name: "London Backpacker", flight_id: flight3.id, hotel_id: hotel4.id)
-puts "Package 'London Backpacker' created."
-package14 = Package.create!(name: "London Luxury", flight_id: flight3.id, hotel_id: hotel4.id)
-puts "Package 'London Luxury' created."
-package15 = Package.create!(name: "London Adventure", flight_id: flight3.id, hotel_id: hotel4.id)
-puts "Package 'London Adventure' created."
-package16 = Package.create!(name: "London Culture", flight_id: flight3.id, hotel_id: hotel4.id)
-puts "Package 'London Culture' created."
-
-puts "Seeding Packages for Sydney..."
-package17 = Package.create!(name: "Sydney Backpacker", flight_id: flight4.id, hotel_id: hotel5.id)
-puts "Package 'Sydney Backpacker' created."
-package18 = Package.create!(name: "Sydney Luxury", flight_id: flight4.id, hotel_id: hotel5.id)
-puts "Package 'Sydney Luxury' created."
-package19 = Package.create!(name: "Sydney Adventure", flight_id: flight4.id, hotel_id: hotel5.id)
-puts "Package 'Sydney Adventure' created."
-package20 = Package.create!(name: "Sydney Culture", flight_id: flight4.id, hotel_id: hotel5.id)
-puts "Package 'Sydney Culture' created."
-puts "Seeding Packages for Berlin..."
-package21 = Package.create!(name: "Berlin Backpacker", flight_id: flight6.id, hotel_id: hotel6.id)
-puts "Package 'Berlin Backpacker' created."
-package22 = Package.create!(name: "Berlin Luxury", flight_id: flight6.id, hotel_id: hotel6.id)
-puts "Package 'Berlin Luxury' created."
-package23 = Package.create!(name: "Berlin Adventure", flight_id: flight6.id, hotel_id: hotel6.id)
-puts "Package 'Berlin Adventure' created."
-package24 = Package.create!(name: "Berlin Culture", flight_id: flight6.id, hotel_id: hotel6.id)
-puts "Package 'Berlin Culture' created."
-
-puts "Seeding Packages for Rome..."
-package25 = Package.create!(name: "Rome Backpacker", flight_id: flight7.id, hotel_id: hotel7.id)
-puts "Package 'Rome Backpacker' created."
-package26 = Package.create!(name: "Rome Luxury", flight_id: flight7.id, hotel_id: hotel7.id)
-puts "Package 'Rome Luxury' created."
-package27 = Package.create!(name: "Rome Adventure", flight_id: flight7.id, hotel_id: hotel7.id)
-puts "Package 'Rome Adventure' created."
-package28 = Package.create!(name: "Rome Culture", flight_id: flight7.id, hotel_id: hotel7.id)
-puts "Package 'Rome Culture' created."
-
-puts "Seeding Packages for Dubai..."
-package29 = Package.create!(name: "Dubai Backpacker", flight_id: flight8.id, hotel_id: hotel8.id)
-puts "Package 'Dubai Backpacker' created."
-package30 = Package.create!(name: "Dubai Luxury", flight_id: flight8.id, hotel_id: hotel8.id)
-puts "Package 'Dubai Luxury' created."
-package31 = Package.create!(name: "Dubai Adventure", flight_id: flight8.id, hotel_id: hotel8.id)
-puts "Package 'Dubai Adventure' created."
-package32 = Package.create!(name: "Dubai Culture", flight_id: flight8.id, hotel_id: hotel8.id)
-puts "Package 'Dubai Culture' created."
-
-puts "Seeding Packages for Barcelona..."
-package33 = Package.create!(name: "Barcelona Backpacker", flight_id: flight9.id, hotel_id: hotel9.id)
-puts "Package 'Barcelona Backpacker' created."
-package34 = Package.create!(name: "Barcelona Luxury", flight_id: flight9.id, hotel_id: hotel9.id)
-puts "Package 'Barcelona Luxury' created."
-package35 = Package.create!(name: "Barcelona Adventure", flight_id: flight9.id, hotel_id: hotel9.id)
-puts "Package 'Barcelona Adventure' created."
-package36 = Package.create!(name: "Barcelona Culture", flight_id: flight9.id, hotel_id: hotel9.id)
-puts "Package 'Barcelona Culture' created."
-
-puts "Seeding Packages for Amsterdam..."
-package37 = Package.create!(name: "Amsterdam Backpacker", flight_id: flight10.id, hotel_id: hotel10.id)
-puts "Package 'Amsterdam Backpacker' created."
-package38 = Package.create!(name: "Amsterdam Luxury", flight_id: flight10.id, hotel_id: hotel10.id)
-puts "Package 'Amsterdam Luxury' created."
-package39 = Package.create!(name: "Amsterdam Adventure", flight_id: flight10.id, hotel_id: hotel10.id)
-puts "Package 'Amsterdam Adventure' created."
-package40 = Package.create!(name: "Amsterdam Culture", flight_id: flight10.id, hotel_id: hotel10.id)
-puts "Package 'Amsterdam Culture' created."
-
-puts "Seeding Packages for Istanbul..."
-package41 = Package.create!(name: "Istanbul Backpacker", flight_id: flight11.id, hotel_id: hotel11.id)
-puts "Package 'Istanbul Backpacker' created."
-package42 = Package.create!(name: "Istanbul Luxury", flight_id: flight11.id, hotel_id: hotel11.id)
-puts "Package 'Istanbul Luxury' created."
-package43 = Package.create!(name: "Istanbul Adventure", flight_id: flight11.id, hotel_id: hotel11.id)
-puts "Package 'Istanbul Adventure' created."
-package44 = Package.create!(name: "Istanbul Culture", flight_id: flight11.id, hotel_id: hotel11.id)
-puts "Package 'Istanbul Culture' created."
-
-puts "Seeding Packages for Madrid..."
-package45 = Package.create!(name: "Madrid Backpacker", flight_id: flight12.id, hotel_id: hotel12.id)
-puts "Package 'Madrid Backpacker' created."
-package46 = Package.create!(name: "Madrid Luxury", flight_id: flight12.id, hotel_id: hotel12.id)
-puts "Package 'Madrid Luxury' created."
-package47 = Package.create!(name: "Madrid Adventure", flight_id: flight12.id, hotel_id: hotel12.id)
-puts "Package 'Madrid Adventure' created."
-package48 = Package.create!(name: "Madrid Culture", flight_id: flight12.id, hotel_id: hotel12.id)
-puts "Package 'Madrid Culture' created."
-
-puts "Seeding Packages for San Francisco..."
-package49 = Package.create!(name: "San Francisco Backpacker", flight_id: flight13.id, hotel_id: hotel13.id)
-puts "Package 'San Francisco Backpacker' created."
-package50 = Package.create!(name: "San Francisco Luxury", flight_id: flight13.id, hotel_id: hotel13.id)
-puts "Package 'San Francisco Luxury' created."
-package51 = Package.create!(name: "San Francisco Adventure", flight_id: flight13.id, hotel_id: hotel13.id)
-puts "Package 'San Francisco Adventure' created."
-package52 = Package.create!(name: "San Francisco Culture", flight_id: flight13.id, hotel_id: hotel13.id)
-puts "Package 'San Francisco Culture' created."
-
-
 puts "Seeding Trips..."
-ttrip1 = Trip.create!(
+trip1 = Trip.create!(
   budget: 3000,
   start_date: Date.today + 10.days,
   end_date: Date.today + 15.days,
   user_id: user1.id,
   category: 1,
-  package_id: package1.id,
+  # package_id: package1.id,
   destination_id: paris.id
 )
 puts "Trip for Paris created."
@@ -429,7 +299,7 @@ trip2 = Trip.create!(
   end_date: Date.today + 10.days,
   user_id: user2.id,
   category: 2,
-  package_id: package2.id,
+  # package_id: package2.id,
   destination_id: new_york.id
 )
 puts "Trip for New York created."
@@ -440,7 +310,7 @@ trip3 = Trip.create!(
   end_date: Date.today + 20.days,
   user_id: user3.id,
   category: 3,
-  package_id: package3.id,
+  # package_id: package3.id,
   destination_id: tokyo.id
 )
 puts "Trip for Tokyo created."
@@ -451,7 +321,7 @@ trip4 = Trip.create!(
   end_date: Date.today + 25.days,
   user_id: user4.id,
   category: 4,
-  package_id: package4.id,
+  # package_id: package4.id,
   destination_id: london.id
 )
 puts "Trip for London created."
@@ -462,7 +332,7 @@ trip5 = Trip.create!(
   end_date: Date.today + 30.days,
   user_id: user5.id,
   category: 5,
-  package_id: package5.id,
+  # package_id: package5.id,
   destination_id: sydney.id
 )
 puts "Trip for Sydney created."
@@ -473,7 +343,7 @@ trip6 = Trip.create!(
   end_date: Date.today + 15.days,
   user_id: user4.id,
   category: 1,
-  package_id: package6.id,  # Package id starts from 6
+  # package_id: package6.id,  # Package id starts from 6
   destination_id: berlin.id
 )
 puts "Trip for Berlin created."
@@ -484,7 +354,7 @@ trip7 = Trip.create!(
   end_date: Date.today + 10.days,
   user_id: user3.id,
   category: 2,
-  package_id: package7.id,  # Package id starts from 7
+  # package_id: package7.id,  # Package id starts from 7
   destination_id: rome.id
 )
 puts "Trip for Rome created."
@@ -495,7 +365,7 @@ trip8 = Trip.create!(
   end_date: Date.today + 20.days,
   user_id: user5.id,
   category: 3,
-  package_id: package8.id,  # Package id starts from 8
+  # package_id: package8.id,  # Package id starts from 8
   destination_id: dubai.id
 )
 puts "Trip for Dubai created."
@@ -506,7 +376,7 @@ trip9 = Trip.create!(
   end_date: Date.today + 25.days,
   user_id: user5.id,
   category: 4,
-  package_id: package9.id,  # Package id starts from 9
+  # package_id: package9.id,  # Package id starts from 9
   destination_id: barcelona.id
 )
 puts "Trip for Barcelona created."
@@ -517,7 +387,7 @@ trip10 = Trip.create!(
   end_date: Date.today + 30.days,
   user_id: user1.id,
   category: 5,
-  package_id: package10.id,  # Package id starts from 10
+  # package_id: package10.id,  # Package id starts from 10
   destination_id: amsterdam.id
 )
 puts "Trip for Amsterdam created."
@@ -528,7 +398,7 @@ trip11 = Trip.create!(
   end_date: Date.today + 15.days,
   user_id: user3.id,
   category: 1,
-  package_id: package11.id,  # Package id starts from 11
+  # package_id: package11.id,  # Package id starts from 11
   destination_id: istanbul.id
 )
 puts "Trip for Istanbul created."
@@ -539,7 +409,7 @@ trip12 = Trip.create!(
   end_date: Date.today + 10.days,
   user_id: user2.id,
   category: 2,
-  package_id: package12.id,  # Package id starts from 12
+  # package_id: package12.id,  # Package id starts from 12
   destination_id: madrid.id
 )
 puts "Trip for Madrid created."
@@ -550,7 +420,7 @@ trip13 = Trip.create!(
   end_date: Date.today + 20.days,
   user_id: user5.id,
   category: 3,
-  package_id: package13.id,  # Package id starts from 13
+  # package_id: package13.id,  # Package id starts from 13
   destination_id: san_francisco.id
 )
 puts "Trip for San Francisco created."
@@ -561,7 +431,7 @@ trip14 = Trip.create!(
   end_date: Date.today + 25.days,
   user_id: user4.id,
   category: 4,
-  package_id: package14.id,  # Package id starts from 14
+  # package_id: package14.id,  # Package id starts from 14
   destination_id: cairo.id
 )
 puts "Trip for Cairo created."
@@ -572,7 +442,7 @@ trip15 = Trip.create!(
   end_date: Date.today + 30.days,
   user_id: user5.id,
   category: 5,
-  package_id: package15.id,  # Package id starts from 15
+  # package_id: package15.id,  # Package id starts from 15
   destination_id: moscow.id
 )
 puts "Trip for Moscow created."
@@ -583,7 +453,7 @@ trip16 = Trip.create!(
   end_date: Date.today + 15.days,
   user_id: user1.id,
   category: 1,
-  package_id: package16.id,  # Package id starts from 16
+  # package_id: package16.id,  # Package id starts from 16
   destination_id: bangkok.id
 )
 puts "Trip for Bangkok created."
@@ -594,7 +464,7 @@ trip17 = Trip.create!(
   end_date: Date.today + 10.days,
   user_id: user2.id,
   category: 2,
-  package_id: package17.id,  # Package id starts from 17
+  # package_id: package17.id,  # Package id starts from 17
   destination_id: hong_kong.id
 )
 puts "Trip for Hong Kong created."
@@ -605,7 +475,7 @@ trip18 = Trip.create!(
   end_date: Date.today + 20.days,
   user_id: user3.id,
   category: 3,
-  package_id: package18.id,  # Package id starts from 18
+  # package_id: package18.id,  # Package id starts from 18
   destination_id: singapore.id
 )
 puts "Trip for Singapore created."
@@ -616,7 +486,7 @@ trip19 = Trip.create!(
   end_date: Date.today + 25.days,
   user_id: user4.id,
   category: 4,
-  package_id: package19.id,  # Package id starts from 19
+  # package_id: package19.id,  # Package id starts from 19
   destination_id: rio_de_janeiro.id
 )
 puts "Trip for Rio de Janeiro created."
@@ -627,7 +497,7 @@ trip20 = Trip.create!(
   end_date: Date.today + 30.days,
   user_id: user2.id,
   category: 5,
-  package_id: package20.id,  # Package id starts from 20
+  # package_id: package20.id,  # Package id starts from 20
   destination_id: cape_town.id
 )
 puts "Trip for Cape Town created."
@@ -638,7 +508,7 @@ trip21 = Trip.create!(
   end_date: Date.today + 15.days,
   user_id: user1.id,
   category: 1,
-  package_id: package21.id,  # Package id starts from 21
+  # package_id: package21.id,  # Package id starts from 21
   destination_id: buenos_aires.id
 )
 puts "Trip for Buenos Aires created."
@@ -649,7 +519,7 @@ trip22 = Trip.create!(
   end_date: Date.today + 10.days,
   user_id: user3.id,
   category: 2,
-  package_id: package22.id,  # Package id starts from 22
+  # package_id: package22.id,  # Package id starts from 22
   destination_id: seoul.id
 )
 puts "Trip for Seoul created."
@@ -660,7 +530,7 @@ trip23 = Trip.create!(
   end_date: Date.today + 20.days,
   user_id: user3.id,
   category: 3,
-  package_id: package23.id,  # Package id starts from 23
+  # package_id: package23.id,  # Package id starts from 23
   destination_id: mumbai.id
 )
 puts "Trip for Mumbai created."
@@ -671,12 +541,142 @@ trip24 = Trip.create!(
   end_date: Date.today + 25.days,
   user_id: user4.id,
   category: 4,
-  package_id: package24.id,  # Package id starts from 24
+  # package_id: package24.id,  # Package id starts from 24
   destination_id: mexico_city.id
 )
 puts "Trip for Mexico City created."
 
-#Attaching one photo to each trip
+
+
+puts "Seeding Packages..."
+package1 = Package.create!(name: "Paris Backpacker", flight_id: flight1.id, hotel_id: hotel1.id, trip_id: Trip.all.sample.id)
+puts "Package 'Paris Backpacker' created."
+package2 = Package.create!(name: "Paris Luxury", flight_id: flight1.id, hotel_id: hotel1.id, trip_id: Trip.all.sample.id)
+puts "Package 'Paris Luxury' created."
+package3 = Package.create!(name: "Paris Adventure", flight_id: flight1.id, hotel_id: hotel1.id, trip_id: Trip.all.sample.id)
+puts "Package 'Paris Adventure' created."
+package4 = Package.create!(name: "Paris Culture", flight_id: flight1.id, hotel_id: hotel1.id, trip_id: Trip.all.sample.id)
+puts "Package 'Paris Culture' created."
+
+package5 = Package.create!(name: "New York Backpacker", flight_id: flight3.id, hotel_id: hotel2.id, trip_id: Trip.all.sample.id)
+puts "Package 'New York Backpacker' created."
+package6 = Package.create!(name: "New York Luxury", flight_id: flight3.id, hotel_id: hotel2.id, trip_id: Trip.all.sample.id)
+puts "Package 'New York Luxury' created."
+package7 = Package.create!(name: "New York Adventure", flight_id: flight3.id, hotel_id: hotel2.id, trip_id: Trip.all.sample.id)
+puts "Package 'New York Adventure' created."
+package8 = Package.create!(name: "New York Culture", flight_id: flight3.id, hotel_id: hotel2.id, trip_id: Trip.all.sample.id)
+puts "Package 'New York Culture' created."
+
+puts "Seeding Packages for Tokyo..."
+package9 = Package.create!(name: "Tokyo Backpacker", flight_id: flight2.id, hotel_id: hotel3.id, trip_id: Trip.all.sample.id)
+puts "Package 'Tokyo Backpacker' created."
+package10 = Package.create!(name: "Tokyo Luxury", flight_id: flight2.id, hotel_id: hotel3.id, trip_id: Trip.all.sample.id)
+puts "Package 'Tokyo Luxury' created."
+package11 = Package.create!(name: "Tokyo Adventure", flight_id: flight2.id, hotel_id: hotel3.id, trip_id: Trip.all.sample.id)
+puts "Package 'Tokyo Adventure' created."
+package12 = Package.create!(name: "Tokyo Culture", flight_id: flight2.id, hotel_id: hotel3.id, trip_id: Trip.all.sample.id)
+puts "Package 'Tokyo Culture' created."
+
+puts "Seeding Packages for London..."
+package13 = Package.create!(name: "London Backpacker", flight_id: flight3.id, hotel_id: hotel4.id, trip_id: Trip.all.sample.id)
+puts "Package 'London Backpacker' created."
+package14 = Package.create!(name: "London Luxury", flight_id: flight3.id, hotel_id: hotel4.id, trip_id: Trip.all.sample.id)
+puts "Package 'London Luxury' created."
+package15 = Package.create!(name: "London Adventure", flight_id: flight3.id, hotel_id: hotel4.id, trip_id: Trip.all.sample.id)
+puts "Package 'London Adventure' created."
+package16 = Package.create!(name: "London Culture", flight_id: flight3.id, hotel_id: hotel4.id, trip_id: Trip.all.sample.id)
+puts "Package 'London Culture' created."
+
+puts "Seeding Packages for Sydney..."
+package17 = Package.create!(name: "Sydney Backpacker", flight_id: flight4.id, hotel_id: hotel5.id, trip_id: Trip.all.sample.id)
+puts "Package 'Sydney Backpacker' created."
+package18 = Package.create!(name: "Sydney Luxury", flight_id: flight4.id, hotel_id: hotel5.id, trip_id: Trip.all.sample.id)
+puts "Package 'Sydney Luxury' created."
+package19 = Package.create!(name: "Sydney Adventure", flight_id: flight4.id, hotel_id: hotel5.id, trip_id: Trip.all.sample.id)
+puts "Package 'Sydney Adventure' created."
+package20 = Package.create!(name: "Sydney Culture", flight_id: flight4.id, hotel_id: hotel5.id, trip_id: Trip.all.sample.id)
+puts "Package 'Sydney Culture' created."
+puts "Seeding Packages for Berlin..."
+package21 = Package.create!(name: "Berlin Backpacker", flight_id: flight6.id, hotel_id: hotel6.id, trip_id: Trip.all.sample.id)
+puts "Package 'Berlin Backpacker' created."
+package22 = Package.create!(name: "Berlin Luxury", flight_id: flight6.id, hotel_id: hotel6.id, trip_id: Trip.all.sample.id)
+puts "Package 'Berlin Luxury' created."
+package23 = Package.create!(name: "Berlin Adventure", flight_id: flight6.id, hotel_id: hotel6.id, trip_id: Trip.all.sample.id)
+puts "Package 'Berlin Adventure' created."
+package24 = Package.create!(name: "Berlin Culture", flight_id: flight6.id, hotel_id: hotel6.id, trip_id: Trip.all.sample.id)
+puts "Package 'Berlin Culture' created."
+
+puts "Seeding Packages for Rome..."
+package25 = Package.create!(name: "Rome Backpacker", flight_id: flight7.id, hotel_id: hotel7.id, trip_id: Trip.all.sample.id)
+puts "Package 'Rome Backpacker' created."
+package26 = Package.create!(name: "Rome Luxury", flight_id: flight7.id, hotel_id: hotel7.id, trip_id: Trip.all.sample.id)
+puts "Package 'Rome Luxury' created."
+package27 = Package.create!(name: "Rome Adventure", flight_id: flight7.id, hotel_id: hotel7.id, trip_id: Trip.all.sample.id)
+puts "Package 'Rome Adventure' created."
+package28 = Package.create!(name: "Rome Culture", flight_id: flight7.id, hotel_id: hotel7.id, trip_id: Trip.all.sample.id)
+puts "Package 'Rome Culture' created."
+
+puts "Seeding Packages for Dubai..."
+package29 = Package.create!(name: "Dubai Backpacker", flight_id: flight8.id, hotel_id: hotel8.id, trip_id: Trip.all.sample.id)
+puts "Package 'Dubai Backpacker' created."
+package30 = Package.create!(name: "Dubai Luxury", flight_id: flight8.id, hotel_id: hotel8.id, trip_id: Trip.all.sample.id)
+puts "Package 'Dubai Luxury' created."
+package31 = Package.create!(name: "Dubai Adventure", flight_id: flight8.id, hotel_id: hotel8.id, trip_id: Trip.all.sample.id)
+puts "Package 'Dubai Adventure' created."
+package32 = Package.create!(name: "Dubai Culture", flight_id: flight8.id, hotel_id: hotel8.id, trip_id: Trip.all.sample.id)
+puts "Package 'Dubai Culture' created."
+
+puts "Seeding Packages for Barcelona..."
+package33 = Package.create!(name: "Barcelona Backpacker", flight_id: flight9.id, hotel_id: hotel9.id, trip_id: Trip.all.sample.id)
+puts "Package 'Barcelona Backpacker' created."
+package34 = Package.create!(name: "Barcelona Luxury", flight_id: flight9.id, hotel_id: hotel9.id, trip_id: Trip.all.sample.id)
+puts "Package 'Barcelona Luxury' created."
+package35 = Package.create!(name: "Barcelona Adventure", flight_id: flight9.id, hotel_id: hotel9.id, trip_id: Trip.all.sample.id)
+puts "Package 'Barcelona Adventure' created."
+package36 = Package.create!(name: "Barcelona Culture", flight_id: flight9.id, hotel_id: hotel9.id, trip_id: Trip.all.sample.id)
+puts "Package 'Barcelona Culture' created."
+
+puts "Seeding Packages for Amsterdam..."
+package37 = Package.create!(name: "Amsterdam Backpacker", flight_id: flight10.id, hotel_id: hotel10.id, trip_id: Trip.all.sample.id)
+puts "Package 'Amsterdam Backpacker' created."
+package38 = Package.create!(name: "Amsterdam Luxury", flight_id: flight10.id, hotel_id: hotel10.id, trip_id: Trip.all.sample.id)
+puts "Package 'Amsterdam Luxury' created."
+package39 = Package.create!(name: "Amsterdam Adventure", flight_id: flight10.id, hotel_id: hotel10.id, trip_id: Trip.all.sample.id)
+puts "Package 'Amsterdam Adventure' created."
+package40 = Package.create!(name: "Amsterdam Culture", flight_id: flight10.id, hotel_id: hotel10.id, trip_id: Trip.all.sample.id)
+puts "Package 'Amsterdam Culture' created."
+
+puts "Seeding Packages for Istanbul..."
+package41 = Package.create!(name: "Istanbul Backpacker", flight_id: flight11.id, hotel_id: hotel11.id, trip_id: Trip.all.sample.id)
+puts "Package 'Istanbul Backpacker' created."
+package42 = Package.create!(name: "Istanbul Luxury", flight_id: flight11.id, hotel_id: hotel11.id, trip_id: Trip.all.sample.id)
+puts "Package 'Istanbul Luxury' created."
+package43 = Package.create!(name: "Istanbul Adventure", flight_id: flight11.id, hotel_id: hotel11.id, trip_id: Trip.all.sample.id)
+puts "Package 'Istanbul Adventure' created."
+package44 = Package.create!(name: "Istanbul Culture", flight_id: flight11.id, hotel_id: hotel11.id, trip_id: Trip.all.sample.id)
+puts "Package 'Istanbul Culture' created."
+
+puts "Seeding Packages for Madrid..."
+package45 = Package.create!(name: "Madrid Backpacker", flight_id: flight12.id, hotel_id: hotel12.id, trip_id: Trip.all.sample.id)
+puts "Package 'Madrid Backpacker' created."
+package46 = Package.create!(name: "Madrid Luxury", flight_id: flight12.id, hotel_id: hotel12.id, trip_id: Trip.all.sample.id)
+puts "Package 'Madrid Luxury' created."
+package47 = Package.create!(name: "Madrid Adventure", flight_id: flight12.id, hotel_id: hotel12.id, trip_id: Trip.all.sample.id)
+puts "Package 'Madrid Adventure' created."
+package48 = Package.create!(name: "Madrid Culture", flight_id: flight12.id, hotel_id: hotel12.id, trip_id: Trip.all.sample.id)
+puts "Package 'Madrid Culture' created."
+
+puts "Seeding Packages for San Francisco..."
+package49 = Package.create!(name: "San Francisco Backpacker", flight_id: flight13.id, hotel_id: hotel13.id, trip_id: Trip.all.sample.id)
+puts "Package 'San Francisco Backpacker' created."
+package50 = Package.create!(name: "San Francisco Luxury", flight_id: flight13.id, hotel_id: hotel13.id, trip_id: Trip.all.sample.id)
+puts "Package 'San Francisco Luxury' created."
+package51 = Package.create!(name: "San Francisco Adventure", flight_id: flight13.id, hotel_id: hotel13.id, trip_id: Trip.all.sample.id)
+puts "Package 'San Francisco Adventure' created."
+package52 = Package.create!(name: "San Francisco Culture", flight_id: flight13.id, hotel_id: hotel13.id, trip_id: Trip.all.sample.id)
+puts "Package 'San Francisco Culture' created."
+
+# Attaching one photo to each trip
 # file = URI.parse("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1\?q\=80\&w\=2940\&auto\=format\&fit\=crop\&ixlib\=rb-4.0.3\&ixid\=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open #photo1
 # trip1.photo.attach(io: file, filename: "trip_1.jpg", content_type: "image/png")
 # trip1.save!
@@ -808,12 +808,12 @@ puts "Trip for Mexico City created."
 # package19.photos.attach(io: file2, filename: "package19.jpg", content_type: "image/jpeg")
 # package19.save
 
-file1 = URI.parse("https://images.unsplash.com/photo-1570241464320-0a3d89eed76d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-file2 = URI.parse("https://plus.unsplash.com/premium_photo-1663013123196-f83decee810f?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
-package20.photos.attach(io: file1, filename: "pack20.jpg", content_type: "image/png")
-package20.photos.attach(io: file2, filename: "package20.jpg", content_type: "image/jpeg")
-package20.save
-puts "pictures uploaded."
+# file1 = URI.parse("https://images.unsplash.com/photo-1570241464320-0a3d89eed76d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# file2 = URI.parse("https://plus.unsplash.com/premium_photo-1663013123196-f83decee810f?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D").open
+# package20.photos.attach(io: file1, filename: "pack20.jpg", content_type: "image/png")
+# package20.photos.attach(io: file2, filename: "package20.jpg", content_type: "image/jpeg")
+# package20.save
+# puts "pictures uploaded."
 
 journal1 = Journal.create!(
   content: "Excited to explore the beautiful city of Paris! Can't wait to see the Eiffel Tower and try some delicious French cuisine.",
