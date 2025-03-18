@@ -24,7 +24,7 @@ class TripsController < ApplicationController
 
     if @trip.save!
       @trip_packages = @trip.generate_packages
-    # raise
+
       # CALL THE METHOD FOR CHAT TO GENERATE PACKAGES
       # Package.categories.each do |cat|
       #   Package.find_or_create(name: "#{@trip.destination} #{cat}")
