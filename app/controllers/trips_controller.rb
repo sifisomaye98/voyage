@@ -2,7 +2,14 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update]
 
   def index
-    @trips = Trip.all
+    @trips = current_user.trips
+    @destinations = current_user.destinations # change to current user destinations (has many through)
+    @markers = @destinations.geocoded.map do |destination|
+      {
+        lat: destination.latitude,
+        lng: destination.longitude
+      }
+    end
   end
 
   def show
@@ -23,11 +30,16 @@ class TripsController < ApplicationController
     @trip.user = current_user
 
     if @trip.save!
+
       # @trip_packages = []
       2.times do
         @trip.generate_packages
       end
       # @trip_packages = @trip.generate_packages
+
+      @trip_packages = @trip.generate_packages
+
+
       # CALL THE METHOD FOR CHAT TO GENERATE PACKAGES
       # Package.categories.each do |cat|
       #   Package.find_or_create(name: "#{@trip.destination} #{cat}")
