@@ -1,5 +1,35 @@
 <!--FIRST GET TO CHOOSE PACKAGE-->
 <!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
+
+<div class="container">
+  <h2><%= "Your trip budget is: $#{@trip.budget}" %></h2>
+  <p><%= "Start date: #{@trip.start_date}" %></p>
+  <p><%= "End date: #{@trip.end_date}" %></p>
+  <p><%= "Trip destination: #{@trip.destination.name}" %></p>
+</div>
+
+<!--div class="container">
+  <div class="card-stack">
+    <%# has_packages = false %>-->
+    <%# @packages.each do |package| %>
+      <%# if package.name.include?(@trip.destination.name) %>
+        <%# has_packages = true %>
+        <%#= link_to package_path(package), class: "card-stack-item", style: "background-image: url('#{cl_image_path(package.photos.first.key)}');" do %>
+<!--          <h2><%#= Package.humanized_categories[package.category.to_sym] %></h2>
+          <p><%#= package.name %></p>
+        <%# end %> <Closing link_to do-block -->
+      <%# end %> <!-- Closing if statement -->
+    <%# end %> <!-- Closing each loop -->
+<!---->
+    <%# unless has_packages %>
+<!--      <p>There are no packages for your destination</p>-->
+    <%# end %>
+  </div>
+</div>
+
+<%= link_to "journal", trip_journals_path(@trip), class:"card-simple-button"  %>
+  <!--<p><%#= Trip.humanized_categories[@trip.category.to_sym] %></p>-->
+
 <% if @trip.package %>
   <div class="d-flex justify-content-center">
     <h1> Your trip to <%= @trip.destination.name  %> begins 🛫 </h1>
@@ -7,6 +37,7 @@
   <div class="d-flex justify-content-center">
     <p> You are going away for a magical <%= (@trip.end_date - @trip.start_date).to_i %> days </p>
   </div>
+
   <div class="cards">
     <div class="card-simple">
       <% if @trip.package.photo.attached? %>
