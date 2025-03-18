@@ -13,6 +13,9 @@ class PackagesController < ApplicationController
   def set_package
     trip = Trip.find(params[:trip_id])
     @package = Package.find(params[:id])
+    # trip.package = @package
+    @package = Package.find_by(selected: false)
+    @package.update(selected: true)
     trip.package = @package
     if trip.save
       redirect_to trip_path(trip)
@@ -21,14 +24,11 @@ class PackagesController < ApplicationController
     end
   end
 
-  private
+  # private
 
   # def package_params
   #   params.require(:package).permit(:description, :name, :photo)
   # end
 
-  # def set_package
-  #   @package = Package.find(params[:id])
-  # end
 
 end

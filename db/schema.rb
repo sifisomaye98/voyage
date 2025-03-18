@@ -111,8 +111,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_152746) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.bigint "trip_id", null: false
+    t.boolean "selected", default: false
     t.index ["flight_id"], name: "index_packages_on_flight_id"
     t.index ["hotel_id"], name: "index_packages_on_hotel_id"
+    t.index ["trip_id"], name: "index_packages_on_trip_id"
   end
 
   create_table "trips", force: :cascade do |t|
@@ -150,6 +153,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_17_152746) do
   add_foreign_key "journals", "trips"
   add_foreign_key "packages", "flights"
   add_foreign_key "packages", "hotels"
+  add_foreign_key "packages", "trips"
   add_foreign_key "trips", "destinations"
   add_foreign_key "trips", "packages"
   add_foreign_key "trips", "users"
