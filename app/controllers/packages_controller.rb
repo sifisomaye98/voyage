@@ -14,7 +14,6 @@ class PackagesController < ApplicationController
     trip = Trip.find(params[:trip_id])
     @package = Package.find(params[:id])
     # trip.package = @package
-    @package = Package.find_by(selected: false)
     @package.update(selected: true)
     trip.package = @package
     if trip.save
