@@ -1,0 +1,17 @@
+<div class="trip-package-cards">
+  <%trip.packages.each do |package| %>
+    <div class="trip-package-card">
+      <div class="trip-package-image">
+        <% if package.photo.attached? %>
+          <%= cl_image_tag(package.photo.key, alt: "AI-generated image of the package destination", class:"card-simple-image" ) %>
+        <% else %>
+          <p> No image available for package </p>
+        <% end %>
+      </div>
+      <div class="trip-package-details">
+        <p ><%= clean_and_format_description(package.description)%></p>
+        <%=  button_to "Choose package", set_package_trip_package_path(@trip, package), class:"card-simple-button" %>
+      </div>
+    </div>
+  </div>
+<% end %>
