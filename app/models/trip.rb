@@ -1,7 +1,7 @@
 class Trip < ApplicationRecord
   belongs_to :user
   belongs_to :package, optional: true
-  has_many :packages
+  has_many :packages, dependent: :destroy
   belongs_to :destination
 
   # has_many :itineraries
@@ -50,7 +50,7 @@ class Trip < ApplicationRecord
       description: response_text,
       trip_id: self.id
     )
-    # package.set_photo(self)
+    package.set_photo(self)
     # packages << package
 
   end
