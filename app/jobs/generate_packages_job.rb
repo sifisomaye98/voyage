@@ -17,9 +17,15 @@ class GeneratePackagesJob < ApplicationJob
       description: response_text,
       trip_id: trip.id
     )
-    package.set_photo(trip)
-    # packages << package
-    # end
+    package.set_photo(trip) if package.respond_to?(:set_photo)
+
+    # Now broadcast so the view updates to show the new package
+    trip.broadcast_replace_to(
+      "trip_#{trip.id}_packages",
+      target: "trip_packages",
+      partial: "trips/packages",
+      locals: { trip: trip }
+    )
     return package
   end
 end

@@ -127,7 +127,7 @@ Journal.create!(
 
 # -- Trip 2 with 1 selected package --
 trip2 = Trip.create!(
-  user: user2,
+  user: user1,
   destination: new_york,
   budget: 2500,
   start_date: Date.today + 7,
@@ -208,7 +208,7 @@ Journal.create!(
 
 # -- Trip 5 with 3 packages (all not selected) --
 trip5 = Trip.create!(
-  user: user2,
+  user: user1,
   destination: sydney,
   budget: 5000,
   start_date: Date.today + 40,

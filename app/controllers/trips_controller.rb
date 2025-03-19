@@ -30,16 +30,16 @@ class TripsController < ApplicationController
     @trip.user = current_user
     if @trip.save!
       GeneratePackagesJob.perform_later(@trip)
-        @trip.duration.to_i.times do |i|
-          @trip.journals.create!(date: @trip.start_date + i)
-        end
-        Turbo::StreamsChannel.broadcast_replace_to(
-          "trip_#{@trip.id}_packages",
-          target: "trip_packages",
-          partial: "trips/packages",
-          locals: { trip: @trip }
-        )
-        redirect_to trip_path(@trip)
+      @trip.duration.to_i.times do |i|
+        @trip.journals.create!(date: @trip.start_date + i)
+      end
+      Turbo::StreamsChannel.broadcast_replace_to(
+        "trip_#{@trip.id}_packages",
+        target: "trip_packages",
+        partial: "trips/packages",
+        locals: { trip: @trip }
+      )
+      redirect_to trip_path(@trip)
     else
       render :new, status: :unproccessable_entity
     end
