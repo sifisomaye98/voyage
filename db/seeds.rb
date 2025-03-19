@@ -1,3 +1,4 @@
+require 'open-uri'
 puts "Destroying all records..."
 Journal.destroy_all
 Package.destroy_all
@@ -106,6 +107,11 @@ trip1 = Trip.create!(
   end_date: Date.today + 15,
   category: 1
 )
+image_url = "https://images.unsplash.com/photo-1541628951107-a9af5346a3e4?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+file = URI.parse(image_url).open
+trip1.photo.attach(io: file, filename: "image of #{trip1.destination.name}", content_type: "image/png")
+trip1.save!
+
 Package.create!(
   trip_id: trip1.id,
   name: "Paris Getaway",
@@ -128,6 +134,11 @@ trip2 = Trip.create!(
   end_date: Date.today + 12,
   category: 2
 )
+image_url = "https://images.unsplash.com/photo-1605617697069-959ec9dfc9de?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fG5ldyUyMHlvcmt8ZW58MHx8MHx8fDA%3D"
+file = URI.parse(image_url).open
+trip2.photo.attach(io: file, filename: "image of #{trip2.destination.name}", content_type: "image/png")
+trip2.save!
+
 Package.create!(
   trip_id: trip2.id,
   name: "NYC Adventure",
@@ -150,6 +161,11 @@ trip3 = Trip.create!(
   end_date: Date.today + 27,
   category: 3
 )
+image_url = "https://images.unsplash.com/photo-1533050487297-09b450131914?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRva3lvfGVufDB8fDB8fHww"
+file = URI.parse(image_url).open
+trip3.photo.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
+trip3.save!
+
 Package.create!(
   trip_id: trip3.id,
   name: "Tokyo Express",
@@ -172,6 +188,11 @@ trip4 = Trip.create!(
   end_date: Date.today + 35,
   category: 4
 )
+image_url = "https://images.unsplash.com/photo-1488747279002-c8523379faaa?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+file = URI.parse(image_url).open
+trip4.photo.attach(io: file, filename: "image of #{trip4.destination.name}", content_type: "image/png")
+trip4.save!
+
 Package.create!(
   trip_id: trip4.id,
   name: "London Highlights",
