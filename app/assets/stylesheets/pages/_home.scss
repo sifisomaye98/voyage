@@ -18,7 +18,6 @@ h4  {
 
 .trip-form {
   background: #ddc16e57;
-  padding: 2rem;
   border-radius: 20px;
   border-left: 1px solid #ddc16e57;
   border-top: 1px solid #ddc16e57;
@@ -32,6 +31,9 @@ h4  {
   bottom:4rem;
 
   width: 23rem;
+
+  position: sticky;
+  place-items: center;
 
   .form-flex {
     display: flex;
@@ -76,4 +78,8 @@ h4  {
     position: absolute;
     transition: all 0.2s ease;
   }
+}
+
+.container {
+  place-items: center;
 }
