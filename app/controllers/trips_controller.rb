@@ -31,22 +31,21 @@ class TripsController < ApplicationController
 
     if @trip.save!
 
+
       # @trip_packages = []
       2.times do
         @trip.generate_packages
       end
-      # @trip_packages = @trip.generate_packages
+      broadcast_replace_to(
+        "trip_#{id}",
+        partial: "trips/trip",
+        locals: { trip: self },
+        target: "trip_#{id}"
+      )
+    end
 
-      @trip_packages = @trip.generate_packages
-
-
-      # CALL THE METHOD FOR CHAT TO GENERATE PACKAGES
-      # Package.categories.each do |cat|
-      #   Package.find_or_create(name: "#{@trip.destination} #{cat}")
-      # end
       #### make journals here
       (@trip.end_date - @trip.start_date).to_i.times do |i|
-      # @trip.duration.to_i.times do |i|
         @trip.journals.create!(date: @trip.start_date + i, title: "Day #{i + 1}")
       end
       redirect_to trip_path(@trip)
