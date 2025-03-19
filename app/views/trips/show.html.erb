@@ -27,35 +27,31 @@
 <%= link_to "journal", trip_journals_path(@trip), class:"card-simple-button"  %>
 <!--<p><%#= Trip.humanized_categories[@trip.category.to_sym] %></p>-->
 <% if @trip.package %>
-  <div class="d-flex justify-content-center">
-    <h1> Your trip to <%= @trip.destination.name  %> begins 🛫 </h1>
-  </div>
-  <div class="d-flex justify-content-center">
+  <div class="selected-trip-heading">
+    <h1> Your trip to <%= @trip.destination.name  %> begins 🧭 </h1>
     <p> You are going away for a magical <%= (@trip.end_date - @trip.start_date).to_i %> days </p>
   </div>
-  <div class="cards">
-    <div class="card-simple">
-      <% if @trip.package.photo.attached? %>
-        <%= cl_image_tag(@trip.package.photo.key, alt: "AI-generated image of the package destination", class:"card-simple-image" ) %>
-      <% else %>
-        <p> No image available for package</p>
-      <% end %>
-      <div class="card-simple-text p-3, mb-3">
-        <%= clean_and_format_description(@trip.package.description) %>
+  <div class="selected-trip-container">
+    <div id="selected-package-card" class="row">
+      <div class="col-7 d-flex">
+        <% if @trip.package.photo.attached? %>
+          <%= cl_image_tag(@trip.package.photo.key, alt: "AI-generated image of the package destination",class:"half-width" ) %>
+        <% else %>
+          <%= image_tag("Italy.png", class:"half-width") %>
+        <% end %>
+        <div class="text-container">
+          <p> <%= @trip.package.description %> </p>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="container p-3">
-    <div class="d-flex justify-content-center">
-      <p>
-        Get ready for an unforgettable travel experience filled with adventure,
-        discovery, and moments that will stay with you forever. Whether you're exploring new cities, relaxing on a tropical beach,
-        or embarking on a thrilling outdoor adventure, every journey holds the potential for incredible moments.
-        Capture the sights and memories in a journal so you can relive them for years to come.
-      </p>
-    </div>
-    <div class="d-flex justify-content-center">
-      <%= link_to "journal", (@trip), class:"card-simple-button"  %>
+      <div id="selected-journal-card" class="col-4">
+        <p>
+          Now is the time to savor the anticipation, to dream about the sights, sounds, and flavors ahead. But don’t let those fleeting details slip away—capture them. Let your journal be your travel companion, a place to spill your excitement, sketch the landscapes, and write down the little moments that make your adventure uniquely yours.
+          Start your journey before you even step on the plane—begin journaling today!
+        </p>
+        <div class="d-flex justify-content-center">
+          <%= link_to "journal", trip_journals_path(@trip), class:"card-simple-button"  %>
+        </div>
+      </div>
     </div>
   </div>
 <% else %>

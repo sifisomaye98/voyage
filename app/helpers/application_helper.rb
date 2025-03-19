@@ -1,5 +1,6 @@
 module ApplicationHelper
   def clean_and_format_description(description)
+
     # Remove all instances of ### and ** (used for headings and bold formatting)
     if description
     cleaned_description = description.gsub(/### /, '').gsub(/\*\*/,'')
