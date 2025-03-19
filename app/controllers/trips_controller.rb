@@ -14,7 +14,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
-    @trip_packages = params[:trip_packages]&.map { |package_id| Package.find(package_id) } || []
+    @trip_packages = @trip.packages
     # @trip_description = extract_packages(@trip.description) #formatinng the packages
     # @trip_packages = params[:trip_packages].map { |package_id| Package.find(package_id) }
   end
@@ -30,18 +30,23 @@ class TripsController < ApplicationController
     @trip.user = current_user
 
     if @trip.save!
+
+      # @trip_packages = []
+      2.times do
+        @trip.generate_packages
+      end
+      # @trip_packages = @trip.generate_packages
+
       @trip_packages = @trip.generate_packages
+
 
       # CALL THE METHOD FOR CHAT TO GENERATE PACKAGES
       # Package.categories.each do |cat|
       #   Package.find_or_create(name: "#{@trip.destination} #{cat}")
       # end
       #### make journals here
-
-
       @trip.duration.to_i.times do |i|
         @trip.journals.create!(date: @trip.start_date + i)
-
       end
       redirect_to trip_path(@trip)
     else

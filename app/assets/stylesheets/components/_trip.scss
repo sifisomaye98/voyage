@@ -1,0 +1,97 @@
+.trip-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.trip-package-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  padding-right: 6px;
+  padding-left: 6px;
+  margin-bottom: 2rem;
+ }
+
+.trip-package-card {
+ border-radius: 32px;
+ background-color: $light-gray;
+// //  border: 3px solid red;
+
+}
+
+.trip-package-details {
+  padding: 2rem;
+  background-color: $light-gray;
+}
+
+.trip-package-image {
+  width: 100%;
+  // height: 100%;
+  object-fit: contain;
+
+}
+
+.selected-trip-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#journal {
+  background-color: white;
+  margin-top: 3px;
+  border-radius: 32px;
+}
+
+#selected-package-card {
+  // border: 2px solid red;
+  border-radius: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+#selected-journal-card {
+  background-color: $light-gray;
+  padding: 44px;
+}
+
+.half-width {
+  width: 50%;
+  height: auto;
+  padding: 16px;
+  border-radius: 32px;
+}
+
+.col-7 {
+  padding: 20px;
+  border: 2px solid black;
+  // margin-right: 2px;
+  max-width: 80% !important;
+  border-radius: 32px;
+  background-color: $light-gray;
+  box-shadow: 15px 7px 5px 3px #D9B18F;
+
+}
+
+.selected-trip-container {
+  padding: 20px;
+  border-radius: 32px;
+}
+
+.text-container {
+
+  padding: 15px;
+  border-radius: 15px;
+  // background-color: #f8f9fa;
+}
+
+.col-4 {
+  border-radius: 32px;
+  max-width: 100%;
+  border: 2px solid black;
+  box-shadow: 15px 7px 5px 3px #D9B18F;
+}
