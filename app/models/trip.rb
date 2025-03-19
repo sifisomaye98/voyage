@@ -53,7 +53,5 @@ class Trip < ApplicationRecord
     # package.set_photo(self)
     # packages << package
 
-    # end
-    return package
   end
 end
