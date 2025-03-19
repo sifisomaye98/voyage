@@ -4,32 +4,38 @@
     From relaxing beach escapes to thrilling mountain treks, these trips are sure to spark your wanderlust.
     Get inspired, discover new destinations, and start planning your own unforgettable journey today!
   </h4>
-  <div class="cards">
-    <% @trips.each do |trip| %>
-      <%= link_to trip_path(trip) do  %>
-        <div class="card-simple">
-          <% if trip.photo.attached?  %>
-            <%= cl_image_tag(trip.photo.key, class:"card-simple-image")%>
-          <% else %>
-            <%= image_tag("Italy.png", class:"card-simple-image") %>
-          <% end %>
-          <div class="card-simple-text">
-            <div>
-              <h2><%= trip.destination.name %></h2>
-              <p>Budget:<%= trip.budget %></p>
-              <p>Dates: <%= "#{trip.start_date} - #{trip.end_date}" %></p>
+  </div>
+  <div class="row p-3">
+  <div class="col-5">
+  <div class="trip-index">
+      <% @trips.each do |trip| %>
+        <%= link_to trip_path(trip) do  %>
+          <div class="card-simple m-2">
+            <% if trip.photo.attached?  %>
+              <%= cl_image_tag(trip.photo.key, class:"card-simple-image")%>
+            <% else %>
+              <%= image_tag("Italy.png", class:"card-simple-image") %>
+            <% end %>
+            <div class="card-simple-text">
+              <div>
+                <h2><%= trip.destination.name %></h2>
+                <p>Budget:<%= trip.budget %></p>
+                <p>Dates: <%= "#{trip.start_date} - #{trip.end_date}" %></p>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
   </div>
-</div>
 
-<div class="map">
-  <div style="width: 100%; height: 600px; border-radius: 15px"
+  </div>
+  <div class="col-7">
+    <div class="map">e
+      <div style="width: 100%; height: 600px; border-radius: 15px"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
   </div>
-</div>
+  </div>

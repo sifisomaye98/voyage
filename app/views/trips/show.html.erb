@@ -1,13 +1,16 @@
 <!--FIRST GET TO CHOOSE PACKAGE-->
 <!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
-<% if @trip.package %>
-  <div class="selected-trip-heading">
-    <h1> Your trip to <%= @trip.destination.name  %> begins 🧭 </h1>
-    <p> You are going away for a magical <%= (@trip.end_date - @trip.start_date).to_i %> days </p>
+<div class="selected-trip-heading">
+  <h1> Your trip to <%= @trip.destination.name  %> 🗺️ </h1>
+  <div class="container">
+  <h5> Embracing new challenges and stepping outside of comfort zones. Each moment adds to the adventure and creates lasting memories.
+    The journey is just as important as the destination.
+  </h5>
+  </div>
+  <% if @trip.package %>
   </div>
   <div class="selected-trip-container">
-    <div id="selected-package-card" class="row">
-      <div class="col-7 d-flex">
+    <div id="selected-package-card" class="row"> <div class="col-7 d-flex">
         <% if @trip.package.photo.attached? %>
           <%= cl_image_tag(@trip.package.photo.key, alt: "AI-generated image of the package destination",class:"half-width" ) %>
         <% else %>
@@ -17,22 +20,22 @@
           <p> <%= @trip.package.description %> </p>
         </div>
       </div>
-      <div id="selected-journal-card" class="col-4">
+      <div id="selected-journal-card" class="col-4 trip-journal-card">
         <p>
           Now is the time to savor the anticipation, to dream about the sights, sounds, and flavors ahead. But don’t let those fleeting details slip away—capture them. Let your journal be your travel companion, a place to spill your excitement, sketch the landscapes, and write down the little moments that make your adventure uniquely yours.
           Start your journey before you even step on the plane—begin journaling today!
         </p>
         <div class="d-flex justify-content-center">
+          <%# if @trip.journals.present? %>
+          <%#= @trip.journals.content %>
+          <%# else %>
           <%= link_to "journal", trip_journals_path(@trip), class:"card-simple-button"  %>
+          <%# end %>
         </div>
       </div>
     </div>
   </div>
 <% else %>
-  <div class="trip-card">
-    <h1> Trip to <%= @trip.destination.name %></h1>
-    <p> Date: Starting on <%= @trip.start_date.strftime("%B %d, %Y") %> </p>
-  </div>
   <div class="trip-package-cards">
     <% @trip_packages.each do |package| %>
       <div class="trip-package-card">
