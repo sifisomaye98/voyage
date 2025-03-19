@@ -6,7 +6,7 @@ class Trip < ApplicationRecord
 
   # has_many :itineraries
   has_many :journals
-  has_one_attached :photo
+  has_many_attached :photos
 
   def duration
     number_of_days = end_date - start_date

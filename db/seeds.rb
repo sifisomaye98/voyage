@@ -1,6 +1,7 @@
 require 'open-uri'
 puts "Destroying all records..."
 Journal.destroy_all
+Trip.destroy_all
 Package.destroy_all
 Trip.destroy_all
 Info.destroy_all
@@ -161,6 +162,22 @@ trip3 = Trip.create!(
   end_date: Date.today + 27,
   category: 3
 )
+image_url = "https://images.unsplash.com/photo-1533050487297-09b450131914?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRva3lvfGVufDB8fDB8fHww"
+file = URI.parse(image_url).open
+trip3.photo.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
+trip3.save!
+image_url = "https://images.unsplash.com/photo-1533050487297-09b450131914?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRva3lvfGVufDB8fDB8fHww"
+file = URI.parse(image_url).open
+trip3.photo.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
+trip3.save!
+image_url = "https://images.unsplash.com/photo-1533050487297-09b450131914?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRva3lvfGVufDB8fDB8fHww"
+file = URI.parse(image_url).open
+trip3.photo.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
+trip3.save!
+image_url = "https://images.unsplash.com/photo-1533050487297-09b450131914?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRva3lvfGVufDB8fDB8fHww"
+file = URI.parse(image_url).open
+trip3.photo.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
+trip3.save!
 image_url = "https://images.unsplash.com/photo-1533050487297-09b450131914?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRva3lvfGVufDB8fDB8fHww"
 file = URI.parse(image_url).open
 trip3.photo.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")

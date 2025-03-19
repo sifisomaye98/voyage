@@ -1,0 +1,15 @@
+#carouselExampleAutoplaying{
+  padding: 20px 8px;
+}
+
+.carousel{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.w-100{
+  height: 500px;
+  width: 500px;
+  border-radius: 15px;
+}

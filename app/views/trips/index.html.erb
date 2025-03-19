@@ -8,7 +8,7 @@
     <% @trips.each do |trip| %>
       <%= link_to trip_path(trip) do  %>
         <div class="card-simple">
-          <% if trip.photo.attached?  %>
+          <% if trip.photos.attached?  %>
             <%= cl_image_tag(trip.photo.key, class:"card-simple-image")%>
           <% else %>
             <%= image_tag("Italy.png", class:"card-simple-image") %>
