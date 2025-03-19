@@ -1,18 +1,10 @@
 <!--FIRST GET TO CHOOSE PACKAGE-->
 <!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
 <%= turbo_stream_from "trip_#{@trip.id}_packages" %>
-<div class="container">
-  <h2><%= "Your trip budget is: $#{@trip.budget}" %></h2>
-  <p><%= "Start date: #{@trip.start_date}" %></p>
-  <p><%= "End date: #{@trip.end_date}" %></p>
-  <p><%= "Trip destination: #{@trip.destination.name}" %></p>
-</div>
-<%= link_to "journal", trip_journals_path(@trip), class:"card-simple-button"  %>
-<!--<p><%#= Trip.humanized_categories[@trip.category.to_sym] %></p>-->
+<h1> Your trip to <%= @trip.destination.name  %> begins 🧭 </h1>
+<p> You are going away for a magical <%= (@trip.end_date - @trip.start_date).to_i %> days </p>
 <% if @trip.package %>
   <div class="selected-trip-heading">
-    <h1> Your trip to <%= @trip.destination.name  %> begins 🧭 </h1>
-    <p> You are going away for a magical <%= (@trip.end_date - @trip.start_date).to_i %> days </p>
   </div>
   <div class="selected-trip-container">
     <div id="selected-package-card" class="row">
@@ -40,9 +32,8 @@
 <% else %>
   <div id="trip_<%= @trip.id %>">
     <div class="trip-card">
-      div id="trip_packages">
-      <%= render "trips/packages", trip: @trip %>
+      <div id="trip_packages">
+        <%= render "trips/packages", trip: @trip %>
+      </div>
     </div>
-  </div>
-<% end %>
-</div>
+  <% end %>

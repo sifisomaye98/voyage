@@ -6,7 +6,7 @@
           <% if package.photo.attached? %>
             <%= cl_image_tag(package.photo.key, alt: "AI-generated image", class:"card-simple-image") %>
           <% else %>
-            <p>No image available for this package</p>
+            <%= image_tag('Italy.png', class:"card-simple-image") %>
           <% end %>
         </div>
         <div class="trip-package-details">
@@ -19,7 +19,7 @@
 <% else %>
   <div class="spinner">
     <!-- Show your loading GIF or spinner -->
-    <img src="/images/plane_taking_off(2).webp" alt="Loading" />
+    <%= image_tag('plane_taking_off.gif') %>
     <p>Generating packages... Please wait!</p>
   </div>
 <% end %>
