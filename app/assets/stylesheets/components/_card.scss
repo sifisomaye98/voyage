@@ -160,8 +160,6 @@ button {
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -169,6 +167,10 @@ button {
   align-items: normal;
   align-content: normal;
   gap: 10px; /* Spacing between cards */
+  background-color: $light-gray;
+  box-shadow: 15px 7px 5px 3px #D9B18F;
+  border: 2px solid black;
+
 }
 .journal-container::-webkit-scrollbar {
   display: none;
