@@ -45,8 +45,9 @@ class TripsController < ApplicationController
       #   Package.find_or_create(name: "#{@trip.destination} #{cat}")
       # end
       #### make journals here
-      @trip.duration.to_i.times do |i|
-        @trip.journals.create!(date: @trip.start_date + i)
+      (@trip.end_date - @trip.start_date).to_i.times do |i|
+      # @trip.duration.to_i.times do |i|
+        @trip.journals.create!(date: @trip.start_date + i, title: "Day #{i + 1}")
       end
       redirect_to trip_path(@trip)
     else
