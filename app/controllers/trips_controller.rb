@@ -24,33 +24,24 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new(trip_params)
+    @trip = current_user.trips.new(trip_params)
     destination = Destination.find(params[:trip][:destination_id])
     @trip.destination = destination
     @trip.user = current_user
-
     if @trip.save!
-
-
-      # @trip_packages = []
-      2.times do
-        @trip.generate_packages
-      end
-      broadcast_replace_to(
-        "trip_#{id}",
-        partial: "trips/trip",
-        locals: { trip: self },
-        target: "trip_#{id}"
-      )
-    end
-
-      #### make journals here
-      (@trip.end_date - @trip.start_date).to_i.times do |i|
-        @trip.journals.create!(date: @trip.start_date + i, title: "Day #{i + 1}")
-      end
-      redirect_to trip_path(@trip)
+      GeneratePackagesJob.perform_later(@trip)
+        @trip.duration.to_i.times do |i|
+          @trip.journals.create!(date: @trip.start_date + i)
+        end
+        Turbo::StreamsChannel.broadcast_replace_to(
+          "trip_#{@trip.id}_packages",
+          target: "trip_packages",
+          partial: "trips/packages",
+          locals: { trip: @trip }
+        )
+        redirect_to trip_path(@trip)
     else
-      redirect_to root_path
+      render :new, status: :unproccessable_entity
     end
   end
 
