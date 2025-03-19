@@ -60,23 +60,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_18_123659) do
     t.float "longitude"
   end
 
-  create_table "flights", force: :cascade do |t|
-    t.string "airline"
-    t.integer "price"
-    t.string "departure"
-    t.string "arrival"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "hotels", force: :cascade do |t|
-    t.string "name"
-    t.integer "price_per_night"
-    t.string "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "infos", force: :cascade do |t|
     t.bigint "destination_id", null: false
     t.string "visa"
@@ -84,14 +67,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_18_123659) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["destination_id"], name: "index_infos_on_destination_id"
-  end
-
-  create_table "itineraries", force: :cascade do |t|
-    t.string "activities"
-    t.bigint "trip_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["trip_id"], name: "index_itineraries_on_trip_id"
   end
 
   create_table "journals", force: :cascade do |t|
@@ -105,16 +80,12 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_18_123659) do
   end
 
   create_table "packages", force: :cascade do |t|
-    t.bigint "flight_id"
-    t.bigint "hotel_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
     t.bigint "trip_id", null: false
     t.boolean "selected", default: false
-    t.index ["flight_id"], name: "index_packages_on_flight_id"
-    t.index ["hotel_id"], name: "index_packages_on_hotel_id"
     t.index ["trip_id"], name: "index_packages_on_trip_id"
   end
 
@@ -149,10 +120,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_18_123659) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "infos", "destinations"
-  add_foreign_key "itineraries", "trips"
   add_foreign_key "journals", "trips"
-  add_foreign_key "packages", "flights"
-  add_foreign_key "packages", "hotels"
   add_foreign_key "packages", "trips"
   add_foreign_key "trips", "destinations"
   add_foreign_key "trips", "packages"

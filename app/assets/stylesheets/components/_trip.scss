@@ -17,6 +17,14 @@
 .trip-package-card {
  border-radius: 32px;
  background-color: $light-gray;
+ border: 2px solid black;
+ box-shadow: 7px 7px 5px 3px #D9B18F;
+ img {
+  border-radius: 32px 32px 0 0;
+  height: 300px;
+  width: 100%;
+ }
+
 // //  border: 3px solid red;
 
 }
@@ -24,13 +32,23 @@
 .trip-package-details {
   padding: 2rem;
   background-color: $light-gray;
+  border-radius: 0 0 32px 32px;
 }
 
 .trip-package-image {
   width: 100%;
   // height: 100%;
   object-fit: contain;
+  position: relative;
+  // border: 2px solid black;
 
+}
+
+#choose-package-button{
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  margin-top: 0 !important;
 }
 
 .selected-trip-heading {

@@ -50,10 +50,8 @@ class Trip < ApplicationRecord
       description: response_text,
       trip_id: self.id
     )
-    package.set_photo(self)
+    # package.set_photo(self)
     # packages << package
 
-    # end
-    return package
   end
 end
