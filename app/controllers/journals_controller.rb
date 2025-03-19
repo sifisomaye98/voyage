@@ -10,9 +10,12 @@ class JournalsController < ApplicationController
 
   def update
     @journal = Journal.find(params[:id])
-    @journal.update(journal_params)
+    if @journal.update!(journal_params)
     # No need for app/views/restaurants/update.html.erb
-    redirect_to journal_path(@journal)
+      redirect_to trip_journals_path(@journal.trip)
+    else
+      render :show, status: :unprocessable_entity
+    end
   end
 
   def create

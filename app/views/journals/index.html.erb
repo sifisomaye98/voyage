@@ -1,16 +1,18 @@
-
 <h1>Adventurer Journal</h1>
 <div class="animated.bg">
-<%= image_tag('cruise.png', class:'cruise') %>
-
-
+  <%= image_tag('cruise.png', class:'cruise') %>
 </div>
-  <div class="journal-container">
-    <% @journals.each do |journal| %>
+<div class="journal-container">
+  <% @journals.each do |journal| %>
     <div class="journal-card">
       <%= link_to journal.title, journal_path(journal) %>
+      <div class="journal-text">
+        <% if journal.content.present? %>
+         <%= journal.content %>
+        <% else %>
+        <p> Add your journal memories here </p>
+        <% end %>
+      </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
-
