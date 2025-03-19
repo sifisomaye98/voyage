@@ -3,26 +3,27 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 150vw;
+  height: 150vh;
   // background: linear-gradient(270deg, #f4f4f4, #e0eafc);
   background-size: 400% 400%;
   animation: bgAnimation 10s infinite linear;
   z-index: -1;
 }
 
-/* Suitcase Animation */
-.suitcase {
+/* Cruise Animation */
+.cruise {
   position: absolute;
   bottom: 10%;
   left: -10%; // Start off-screen
+  right: 0;
   width: 100px; // Adjust size
   height: auto;
-  animation: moveSuitcase 8s linear infinite;
+  animation: moveCruise 8s linear infinite;
 }
 
-/* Move the suitcase from left to right */
-@keyframes moveSuitcase {
+/* Move the cruise from left to right */
+@keyframes moveCruise {
   0% { left: -10%; transform: rotate(0deg); }
   50% { transform: rotate(5deg); } // Slight tilt for realism
   100% { left: 110%; transform: rotate(0deg); } // Moves off-screen
