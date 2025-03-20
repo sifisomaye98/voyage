@@ -6,8 +6,6 @@
   </h5>
 </div>
 <% if @trip.package %>
-  <div class="selected-trip-heading">
-  </div>
   <div class="selected-trip-container">
     <div id="selected-package-card" class="row">
       <div class="col-7 d-flex">
@@ -21,6 +19,27 @@
            <%= render 'trip_photos_form', trip: @trip %>
         </div>
       </div>
+      <div id="selected-journal-card" class="col-4 trip-journal-card">
+        <div class="text-center mb-5">
+          <%= link_to "journal", trip_journals_path(@trip), class:"card-simple-button"  %>
+        </div>
+        <div class="d-flex justify-content-center">
+          <% if @trip_journals %>
+            <% @trip_journals.each do |journal| %>
+              <% if journal.rich_text_content.body %>
+                <div class="trip-journal-card journal-card">
+                  <%= link_to journal.title, journal_path(journal) %>
+                  <div class="journal-text">
+                    <%= journal.content %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          <% else %>
+            <p>
+              Now is the time to savor the anticipation, to dream about the sights, sounds, and flavors ahead. But don’t let those fleeting details slip away—capture them. Let your journal be your travel companion, a place to spill your excitement, sketch the landscapes, and write down the little moments that make your adventure uniquely yours.
+              Start your journey before you even step on the plane—begin journaling today!
+            </p>
       <div id="selected-journal-card" class="col-4">
         <div class="space-carousel">
           <p>
@@ -48,9 +67,10 @@
             </button>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
+</div>
 <% else %>
   <div id="trip_<%= @trip.id %>">
     <div class="trip-card">
@@ -58,4 +78,5 @@
         <%= render "trips/packages", trip: @trip %>
       </div>
     </div>
-  <% end %>
+  </div>
+<% end %>
