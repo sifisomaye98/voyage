@@ -38,13 +38,13 @@
 
     <div class="login-form">
 
-      <div class="sign-in-htm">
+      <div class="sign-in-html">
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="group">
-            <%= f.input :email, label: 'Email', required: true, input_html: { class: "input", autocomplete: "email" } %>
+            <%= f.input :email, label: 'Email', required: true, input_html: { class: "input form-control bg-white", autocomplete: "email" } %>
           </div>
           <div class="group">
-            <%= f.input :password, label: 'Password', required: true, input_html: { class: "input", autocomplete: "current-password" } %>
+            <%= f.input :password, label: 'Password', required: true, input_html: { class: "input form-control bg-white", autocomplete: "current-password" } %>
           </div>
           <div class="group">
             <%= f.input :remember_me, as: :boolean, label: 'Keep me signed in' if devise_mapping.rememberable? %>
