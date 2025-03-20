@@ -15,7 +15,9 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @trip_packages = @trip.packages
-    @trip_journals = @trip.journals.where.not(content: nil)
+    @journals = Journal.with_rich_text_content
+
+    @trip_journals = @trip.journals
   end
 
   def new
