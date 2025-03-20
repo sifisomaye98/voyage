@@ -1,8 +1,7 @@
 <div class="container">
-  <h1> Trip Inspo </h1>
-  <h4> Looking for your next adventure? Explore some incredible getaways that other travelers have experienced!
-    From relaxing beach escapes to thrilling mountain treks, these trips are sure to spark your wanderlust.
-    Get inspired, discover new destinations, and start planning your own unforgettable journey today!
+<h1> Wanderlust awaits </h1>
+  <h4>
+  Ready for your next adventure? Dive into amazing travel experiences shared by fellow explorers! Whether you crave sun-soaked beaches, exhilarating hikes, or hidden gems off the beaten path, we’ve got the perfect inspiration for you. Discover new destinations, fuel your wanderlust, and start planning your dream trip today!
   </h4>
 </div>
 <div class="row p-3">
@@ -19,8 +18,10 @@
           <div class="card-simple-text">
             <div>
               <h2><%= trip.destination.name %></h2>
-              <p>Budget:<%= trip.budget %></p>
-              <p>Dates: <%= "#{trip.start_date} - #{trip.end_date}" %></p>
+              <p>$<%= trip.budget %></p>
+              <%= image_tag("money.png", class:"icon") %>
+              <p> <%= "#{trip.start_date.strftime(" %e %b %y")} - #{trip.end_date.strftime(" %e %b %y")}" %></p>
+              <%= image_tag("dates.png", class:"icon") %>
             </div>
           </div>
         </div>
