@@ -1,37 +1,33 @@
 <div class="container lg">
-<div class="journal-entry-card">
- <div class="icon-heading-container">
-    <div id="icon">
-    <i class="fa-brands fa-fly"></i>
+  <div class="journal-entry-card">
+    <div class="icon-heading-container">
+      <div id="icon">
+        <i class="fa-brands fa-fly"></i>
+      </div>
+      <h2>Journal Entry</h2>
+      <div id="icon">
+        <i class="fa-brands fa-fly"></i>
+      </div>
     </div>
-  <h2>Journal Entry</h2>
-  <div id="icon">
-    <i class="fa-brands fa-fly"></i>
+    <% if @journal.content == nil %>
+      <h2><%= @journal.title %></h2>
+      <p><%= @journal.date %></p>
+      <p><%= @journal.content %></p>
+    <% else %>
+      <%= simple_form_for(@journal) do |f| %>
+        <!-- [...] -->
+        <div class="form-inputs">
+          <%= f.input :title %>
+          <%= f.input :date %>
+          <!-- insert these three line of code below -->
+          <div class="form-inputs mb-4">
+            <%= f.rich_text_area :content %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, class:"card-simple-button" %>
+          </div>
+        </div>
+      </div>
     </div>
- </div>
-<% if @journal.content == nil %>
-
-<h2><%= @journal.title %></h2>
-<p><%= @journal.date %></p>
-<p><%= @journal.content %></p>
-  <% else %>
-  <%= simple_form_for(@journal) do |f| %>
-
-  <!-- [...] -->
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :date %>
-
-  <!-- insert these three line of code below -->
-  <div class="form-inputs mb-4">
-    <%= f.rich_text_area :content %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, class:"card-simple-button" %>
-</div>
-  </div>
-  </div>
-  </div>
-<% end %>
+  <% end %>
 <% end %>
