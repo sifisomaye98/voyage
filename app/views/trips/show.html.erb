@@ -1,5 +1,3 @@
-<!--FIRST GET TO CHOOSE PACKAGE-->
-<!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
 <%= turbo_stream_from "trip_#{@trip.id}_packages" %>
 <div class="container">
   <h1> Your trip to <%= @trip.destination.name  %> 🗺️ </h1>
