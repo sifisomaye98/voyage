@@ -13,7 +13,7 @@
 }
 .trix-content {
   background-color: white !important;
-  min-height: 40vh;
+  height: 40vh;
   color: #531f37;
 }
 // .banner {
@@ -25,3 +25,11 @@
 //   display: inline;
 //   justify-content: space-between;
 // }
+
+.trip-journal-card {
+  .trix-content {
+    background-color: white !important;
+    max-height: 7vh !important;
+    color: #531f37;
+  }
+}

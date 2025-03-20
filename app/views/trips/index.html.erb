@@ -1,7 +1,7 @@
 <div class="container">
-<h1> Wanderlust awaits </h1>
+  <h1> Wanderlust awaits </h1>
   <h4>
-  Ready for your next adventure? Dive into amazing travel experiences shared by fellow explorers! Whether you crave sun-soaked beaches, exhilarating hikes, or hidden gems off the beaten path, we’ve got the perfect inspiration for you. Discover new destinations, fuel your wanderlust, and start planning your dream trip today!
+    Ready for your next adventure? Dive into amazing travel experiences shared by fellow explorers! Whether you crave sun-soaked beaches, exhilarating hikes, or hidden gems off the beaten path, we’ve got the perfect inspiration for you. Discover new destinations, fuel your wanderlust, and start planning your dream trip today!
   </h4>
 </div>
 <div class="row p-3">
@@ -16,12 +16,16 @@
             <%= image_tag("Italy.png", class:"card-simple-image") %>
           <% end %>
           <div class="card-simple-text">
-            <div>
-              <h2><%= trip.destination.name %></h2>
+            <h2><%= trip.destination.name %></h2>
+            <div class= "card-simple-details">
+            <div class="flex-details">
+              <%= image_tag("money.png") %>
               <p>$<%= trip.budget %></p>
-              <%= image_tag("money.png", class:"icon") %>
+            </div>
+            <div class="flex-details">
+              <%= image_tag("dates.png") %>
               <p> <%= "#{trip.start_date.strftime(" %e %b %y")} - #{trip.end_date.strftime(" %e %b %y")}" %></p>
-              <%= image_tag("dates.png", class:"icon") %>
+            </div>
             </div>
           </div>
         </div>
