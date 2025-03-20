@@ -30,7 +30,7 @@ class TripsController < ApplicationController
     @trip.destination = destination
     @trip.user = current_user
     if @trip.save!
-      GeneratePackagesJob.perform_later(@trip)
+      # GeneratePackagesJob.perform_later(@trip)
       @trip.duration.to_i.times do |i|
         @trip.journals.create!(date: @trip.start_date + i, title: "Day #{i + 1}")
       end

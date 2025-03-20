@@ -52,7 +52,7 @@ gem "sassc-rails"
 gem "ruby-openai"
 gem "cloudinary"
 gem "geocoder"
-gem "solid_queue"
+# gem "solid_queue"
 
 group :development, :test do
   gem "dotenv-rails"
