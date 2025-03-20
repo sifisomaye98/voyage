@@ -93,8 +93,13 @@ development:
 test:
   <<: *default
   database: voyage_test
-production:
+primary: &primary
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
+  url: <%= ENV["DATABASE_URL"] %>  # Heroku requires DATABASE_URL
+production:
+  primary:
+    <<: *primary
+  queue:
+    <<: *primary
+    database: app_production_queue
+    migrations_paths: db/queue_migrate
