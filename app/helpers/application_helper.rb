@@ -6,7 +6,7 @@ module ApplicationHelper
     cleaned_description = description.gsub(/### /, '').gsub(/\*\*/,'')
 
     # Now use simple_format to ensure line breaks and paragraphs are handled
-    # simple_format(cleaned_description)
+    simple_format(cleaned_description)
     end
   end
 end

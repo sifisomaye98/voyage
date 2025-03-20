@@ -3,7 +3,6 @@ class Trip < ApplicationRecord
   belongs_to :package, optional: true
   has_many :packages, dependent: :destroy
   belongs_to :destination
-
   # has_many :itineraries
   has_many :journals
   has_one_attached :photo
@@ -31,6 +30,7 @@ class Trip < ApplicationRecord
     }
   end
 
+<<<<<<< HEAD
   def generate_packages
     client = OpenAI::Client.new
     chatgpt_response = client.chat(parameters: {
@@ -54,4 +54,6 @@ class Trip < ApplicationRecord
     # packages << package
 
   end
+=======
+>>>>>>> master
 end
