@@ -1,5 +1,3 @@
-<!--FIRST GET TO CHOOSE PACKAGE-->
-<!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
 <%= turbo_stream_from "trip_#{@trip.id}_packages" %>
 <div class="container">
   <h1> Your trip to <%= @trip.destination.name  %> 🗺️ </h1>
@@ -11,13 +9,14 @@
   <div class="selected-trip-container">
     <div id="selected-package-card" class="row">
       <div class="col-7 d-flex">
-        <% if @trip.package.photo.attached? %>
-          <%= cl_image_tag(@trip.package.photo.key, alt: "AI-generated image of the package destination",class:"half-width" ) %>
+        <% if @trip.photos.attached? %>
+          <%= cl_image_tag(@trip.photos.first.key, alt: "AI-generated image of the package destination",class:"half-width" ) %>
         <% else %>
-          <%= image_tag("Italy.png", class:"half-width") %>
+          <%= image_tag("Italy.png", class:"half-width", class:"d-block w-100") %>
         <% end %>
         <div class="text-container">
           <p> <%= clean_and_format_description(@trip.package.description) %> </p>
+           <%= render 'trip_photos_form', trip: @trip %>
         </div>
       </div>
       <div id="selected-journal-card" class="col-4 trip-journal-card">
@@ -41,6 +40,31 @@
               Now is the time to savor the anticipation, to dream about the sights, sounds, and flavors ahead. But don’t let those fleeting details slip away—capture them. Let your journal be your travel companion, a place to spill your excitement, sketch the landscapes, and write down the little moments that make your adventure uniquely yours.
               Start your journey before you even step on the plane—begin journaling today!
             </p>
+      <div id="selected-journal-card" class="col-4">
+        <div class="space-carousel">
+          <p>
+            Now is the time to savor the anticipation, to dream about the sights, sounds, and flavors ahead. But don’t let those fleeting details slip away—capture them. Let your journal be your travel companion, a place to spill your excitement, sketch the landscapes, and write down the little moments that make your adventure uniquely yours.
+            Start your journey before you even step on the plane—begin journaling today!
+          </p>
+          <div class="d-flex justify-content-center">
+            <%= link_to "journal", trip_journals_path(@trip), class:"card-simple-button"  %>
+          </div>
+          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" >
+            <div class="carousel-inner">
+              <% @trip.photos.each_with_index do |photo,index| %>
+                <div class="carousel-item <%= 'active' if index == 0 %>">
+                  <%= cl_image_tag(photo.key, class:"d-block w-100") %>
+                </div>
+              <% end %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
       <% end %>

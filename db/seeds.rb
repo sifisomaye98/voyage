@@ -1,6 +1,7 @@
 require 'open-uri'
 puts "Destroying all records..."
 Journal.destroy_all
+Trip.destroy_all
 Package.destroy_all
 Trip.destroy_all
 Info.destroy_all
@@ -109,7 +110,7 @@ trip1 = Trip.create!(
 )
 image_url = "https://images.unsplash.com/photo-1541628951107-a9af5346a3e4?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 file = URI.parse(image_url).open
-trip1.photo.attach(io: file, filename: "image of #{trip1.destination.name}", content_type: "image/png")
+trip1.photos.attach(io: file, filename: "image of #{trip1.destination.name}", content_type: "image/png")
 trip1.save!
 
 Package.create!(
@@ -136,7 +137,7 @@ trip2 = Trip.create!(
 )
 image_url = "https://images.unsplash.com/photo-1605617697069-959ec9dfc9de?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fG5ldyUyMHlvcmt8ZW58MHx8MHx8fDA%3D"
 file = URI.parse(image_url).open
-trip2.photo.attach(io: file, filename: "image of #{trip2.destination.name}", content_type: "image/png")
+trip2.photos.attach(io: file, filename: "image of #{trip2.destination.name}", content_type: "image/png")
 trip2.save!
 
 Package.create!(
@@ -163,7 +164,23 @@ trip3 = Trip.create!(
 )
 image_url = "https://images.unsplash.com/photo-1533050487297-09b450131914?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHRva3lvfGVufDB8fDB8fHww"
 file = URI.parse(image_url).open
-trip3.photo.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
+trip3.photos.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
+trip3.save!
+image_url = "https://plus.unsplash.com/premium_photo-1661964177687-57387c2cbd14?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+file = URI.parse(image_url).open
+trip3.photos.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
+trip3.save!
+image_url = "https://images.unsplash.com/photo-1557409518-691ebcd96038?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+file = URI.parse(image_url).open
+trip3.photos.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
+trip3.save!
+image_url = "https://images.unsplash.com/photo-1522547902298-51566e4fb383?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+file = URI.parse(image_url).open
+trip3.photos.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
+trip3.save!
+image_url = "https://images.unsplash.com/photo-1544885935-98dd03b09034?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+file = URI.parse(image_url).open
+trip3.photos.attach(io: file, filename: "image of #{trip3.destination.name}", content_type: "image/png")
 trip3.save!
 
 Package.create!(
@@ -190,7 +207,7 @@ trip4 = Trip.create!(
 )
 image_url = "https://images.unsplash.com/photo-1488747279002-c8523379faaa?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 file = URI.parse(image_url).open
-trip4.photo.attach(io: file, filename: "image of #{trip4.destination.name}", content_type: "image/png")
+trip4.photos.attach(io: file, filename: "image of #{trip4.destination.name}", content_type: "image/png")
 trip4.save!
 
 Package.create!(

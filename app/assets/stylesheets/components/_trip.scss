@@ -70,11 +70,16 @@
   flex-wrap: wrap;
   justify-content: space-around;
 
+
 }
 
 #selected-journal-card {
   background-color: $light-gray;
   padding: 44px;
+  border-radius: 32px;
+  box-shadow: 15px 7px 5px 3px #D9B18F;
+  border: 2px solid black;
+
 }
 
 .half-width {
@@ -82,6 +87,8 @@
   height: auto;
   padding: 16px;
   border-radius: 32px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .col-7 {
