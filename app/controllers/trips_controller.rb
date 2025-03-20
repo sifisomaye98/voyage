@@ -15,8 +15,7 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @trip_packages = @trip.packages
-    # @trip_description = extract_packages(@trip.description) #formatinng the packages
-    # @trip_packages = params[:trip_packages].map { |package_id| Package.find(package_id) }
+    @trip_journals = @trip.journals.where.not(content: nil)
   end
 
   def new
@@ -24,34 +23,24 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new(trip_params)
+    @trip = current_user.trips.new(trip_params)
     destination = Destination.find(params[:trip][:destination_id])
     @trip.destination = destination
     @trip.user = current_user
-
     if @trip.save!
-
-      # @trip_packages = []
-      2.times do
-        @trip.generate_packages
-      end
-      # @trip_packages = @trip.generate_packages
-
-      @trip_packages = @trip.generate_packages
-
-
-      # CALL THE METHOD FOR CHAT TO GENERATE PACKAGES
-      # Package.categories.each do |cat|
-      #   Package.find_or_create(name: "#{@trip.destination} #{cat}")
-      # end
-      #### make journals here
-      (@trip.end_date - @trip.start_date).to_i.times do |i|
-      # @trip.duration.to_i.times do |i|
+      GeneratePackagesJob.perform_later(@trip)
+      @trip.duration.to_i.times do |i|
         @trip.journals.create!(date: @trip.start_date + i, title: "Day #{i + 1}")
       end
+      Turbo::StreamsChannel.broadcast_replace_to(
+        "trip_#{@trip.id}_packages",
+        target: "trip_packages",
+        partial: "trips/packages",
+        locals: { trip: @trip }
+      )
       redirect_to trip_path(@trip)
     else
-      redirect_to root_path
+      render :new, status: :unproccessable_entity
     end
   end
 

@@ -20,6 +20,7 @@
   width: 100px; // Adjust size
   height: auto;
   animation: moveCruise 8s linear infinite;
+  z-index: -1;
 }
 
 /* Move the cruise from left to right */

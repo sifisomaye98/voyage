@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :trips, except: [:destroy] do
+    resources :destinations
     resources :journals, only: [:index]
     resources :packages, only: [] do
     member do
