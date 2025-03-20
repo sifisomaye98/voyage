@@ -1,15 +1,20 @@
 // Specific CSS for your home-page
 .background_image {
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   background-image: url("Italy.png");
   height: 100vh;
   background-size: cover;
+  h1 {
+    font-size: 6rem
+  }
+
+
 
 }
 
 
-h4  {
+h4 {
   text-align: center;
   color: black;
   font-family: "Karla", sans-serif;
@@ -17,29 +22,57 @@ h4  {
 }
 
 .trip-form {
-  background: #ddc16e57;
+
+  margin: 2rem;
+  padding: 1rem;
+
+  background: #f2d47991;
   border-radius: 20px;
   border-left: 1px solid #ddc16e57;
   border-top: 1px solid #ddc16e57;
   // backdrop-filter: blur(10px);
-  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
   transition: all 0.2s ease-in-out;
 
   position: absolute;
-  bottom:4rem;
+  bottom: 4rem;
 
-  width: 23rem;
+  width: 60vw;
 
   position: sticky;
   place-items: center;
+  .form-flex {
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+
+  .form-select {
+    border-radius: 32px;
+
+
+  }
+  .form-control {
+    border-radius: 32px;
+
+
+  }
+
+  h4 {
+    font-family: $headers-font;
+    color: #531f37;
+  }
 
   .form-flex {
     display: flex;
     align-items: center;
 
   }
+
   // label {
   //     font-weight: 500;
   //     color: $plum-purple;
@@ -74,7 +107,7 @@ h4  {
     border-radius: 10px;
     border-left: 1px solid $white;
     border-top: 1px solid $white;
-    box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+    box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
     position: absolute;
     transition: all 0.2s ease;
   }
