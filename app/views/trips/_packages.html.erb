@@ -3,6 +3,7 @@
     <% trip.packages.each do |package| %>
       <div class="trip-package-card">
         <div class="trip-package-image">
+          <%= button_to "Choose package", set_package_trip_package_path(trip, package), class: "card-simple-button", id:"choose-package-button"%>
           <% if package.photo.attached? %>
             <%= cl_image_tag(package.photo.key, alt: "AI-generated image", class:"card-simple-image") %>
           <% else %>
@@ -11,7 +12,6 @@
         </div>
         <div class="trip-package-details">
           <p><%= clean_and_format_description(package.description) %></p>
-          <%= button_to "Choose package", set_package_trip_package_path(trip, package), class: "card-simple-button" %>
         </div>
       </div>
     <% end %>
@@ -20,6 +20,6 @@
   <div class="spinner">
     <!-- Show your loading GIF or spinner -->
     <%= image_tag('plane_taking_off.gif') %>
-    <p>Generating packages... Please wait!</p>
+    <h4>Generating authentic packages... Please wait!</h4>
   </div>
 <% end %>

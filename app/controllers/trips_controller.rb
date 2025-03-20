@@ -15,8 +15,7 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @trip_packages = @trip.packages
-    # @trip_description = extract_packages(@trip.description) #formatinng the packages
-    # @trip_packages = params[:trip_packages].map { |package_id| Package.find(package_id) }
+    @trip_journals = @trip.journals.where.not(content: nil)
   end
 
   def new
@@ -31,7 +30,7 @@ class TripsController < ApplicationController
     if @trip.save!
       GeneratePackagesJob.perform_later(@trip)
       @trip.duration.to_i.times do |i|
-        @trip.journals.create!(date: @trip.start_date + i)
+        @trip.journals.create!(date: @trip.start_date + i, title: "Day #{i + 1}")
       end
       Turbo::StreamsChannel.broadcast_replace_to(
         "trip_#{@trip.id}_packages",

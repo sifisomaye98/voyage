@@ -1,32 +1,23 @@
-<h1>Adventurer Journal</h1>
-  <div class="journal-container">
-    <% @journals.each do |journal| %>
-    <div class="journal-card">
-      <%= link_to journal.title, journal_path(journal) %>
-  <div class="animated.bg">
-    <%= image_tag('cruise.png', class:'cruise') %>
-  <div class="sea">
-  <%= image_tag('sea.png', class:'sea') %>
-
-  </div>
-    </div>
-    </div>
-    </div>
-<% end %>
-<div class="animated.bg">
-  <%= image_tag('cruise.png', class:'cruise') %>
-</div>
-<div class="journal-container">
-  <% @journals.each do |journal| %>
-    <div class="journal-card">
-      <%= link_to journal.title, journal_path(journal) %>
-      <div class="journal-text">
-        <% if journal.content.present? %>
-         <%= journal.content %>
-        <% else %>
-        <p> Add your journal memories here </p>
-        <% end %>
-      </div>
-    </div>
+<div class="selected-trip-heading">
+  <%= link_to trip_path(@trip) do  %>
+    <h1> Your trip to <%= @trip.destination.name  %> 🗺️ </h1>
   <% end %>
-</div>
+  <div class="container">
+    <h5> Embracing new challenges and stepping outside of comfort zones. Each moment adds to the adventure and creates lasting memories.
+      The journey is just as important as the destination.
+    </h5>
+    <%= image_tag('cruise.png', class:'cruise') %>
+    <div class="journal-container">
+      <% @journals.each do |journal| %>
+        <div class="journal-card">
+          <%= link_to journal.title, journal_path(journal) %>
+          <div class="journal-text">
+            <% if journal.content.present? %>
+              <%= journal.content %>
+            <% else %>
+              <p> Add your journal memories here </p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>

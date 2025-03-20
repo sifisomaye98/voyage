@@ -1,8 +1,12 @@
 <!--FIRST GET TO CHOOSE PACKAGE-->
 <!--UPDATE TRIP.PACKAGE TO ASSIGN THAT PACKAGE TO THIS TRIP-->
 <%= turbo_stream_from "trip_#{@trip.id}_packages" %>
-<h1> Your trip to <%= @trip.destination.name  %> begins 🧭 </h1>
-<p> You are going away for a magical <%= (@trip.end_date - @trip.start_date).to_i %> days </p>
+<div class="container">
+  <h1> Your trip to <%= @trip.destination.name  %> 🗺️ </h1>
+  <h5> Embracing new challenges and stepping outside of comfort zones. Each moment adds to the adventure and creates lasting memories.
+    The journey is just as important as the destination.
+  </h5>
+</div>
 <% if @trip.package %>
   <div class="selected-trip-heading">
   </div>
@@ -15,16 +19,24 @@
           <%= image_tag("Italy.png", class:"half-width") %>
         <% end %>
         <div class="text-container">
-          <p> <%= @trip.package.description %> </p>
+          <p> <%= clean_and_format_description(@trip.package.description) %> </p>
         </div>
       </div>
-      <div id="selected-journal-card" class="col-4">
+      <div id="selected-journal-card" class="col-4 trip-journal-card">
         <p>
           Now is the time to savor the anticipation, to dream about the sights, sounds, and flavors ahead. But don’t let those fleeting details slip away—capture them. Let your journal be your travel companion, a place to spill your excitement, sketch the landscapes, and write down the little moments that make your adventure uniquely yours.
           Start your journey before you even step on the plane—begin journaling today!
         </p>
         <div class="d-flex justify-content-center">
+          <% if @trip_journals %>
+            <% @trip_journals.each do |journal| %>
+              <%= journal.content %>
+            <% end %>
+          <% end %>
+          <%# raise %>
+          <%# else %>
           <%= link_to "journal", trip_journals_path(@trip), class:"card-simple-button"  %>
+          <%# end %>
         </div>
       </div>
     </div>
