@@ -186,14 +186,26 @@ trip3.save!
 Package.create!(
   trip_id: trip3.id,
   name: "Tokyo Express",
-  description: "Experience neon-lit streets, ramen, and sushi.",
+  description: "Experience six unforgettable days in Tokyo—where tradition meets neon-lit excitement! Dive into the city’s buzzing streets, sample fresh sushi at Tsukiji’s famous markets, and wander the serene paths of Meiji Shrine. Shop ‘til you drop in Shibuya and Harajuku, then sip sake in cozy local izakayas. Catch panoramic city views from Tokyo Skytree, step back in time at the Imperial Palace gardens, and ride a boat along the Sumida River. End your adventure with a day trip to the majestic temples of Kamakura or the bright lights of Odaiba. Get ready for sensory overload and heartwarming hospitality in the one and only Tokyo!",
   selected: true
 )
 Journal.create!(
   trip_id: trip3.id,
-  title: "Tokyo Journal",
+  title: "Day 1: Arrival & First Impressions",
   date: trip3.start_date,
-  content: "First time in Japan—so excited!"
+  content: "Touched down in Tokyo and immediately felt the city’s electric hum! Checked into a snug, minimalist hotel room, then set out to find some comfort food—ended up devouring ramen so flavorful, I nearly cried tears of joy. Shibuya Crossing at rush hour was absolute pandemonium, but in the best, most exhilarating way possible. I ended the evening watching neon lights dance across the skyline from my window, already feeling like I’ve stepped into the future."
+)
+Journal.create!(
+  trip_id: trip3.id,
+  title: "Day 2: Tradition Meets Tech",
+  date: trip3.start_date + 1,
+  content: "Woke up early to visit the serene Meiji Shrine. The contrast of the quiet forest paths against skyscrapers looming just beyond was mind-blowing. Then, it was on to Harajuku, where vibrant street fashion and quirky shops lured me in. Tried rainbow cotton candy the size of my head (yes, literally), and spent the afternoon marveling at high-tech gadgets in Akihabara. Rounded off the day at a tiny izakaya, savoring perfectly grilled yakitori while chatting with friendly locals."
+)
+Journal.create!(
+  trip_id: trip3.id,
+  title: "Day 2: Tradition Meets Tech",
+  content: "Started off at the Imperial Palace gardens—so lush and peaceful, with a dash of centuries-old history in every corner. Next, I hopped on the train to the Tokyo Skytree for breathtaking 360° views—my heart was in my throat peering down at the endless cityscape below. As the sun set, I took a leisurely river cruise along the Sumida, floating under twinkling bridges while skyscrapers sparkled on both sides. Pure Tokyo magic!"
+  date: trip3.start_date + 2,
 )
 
 # -- Trip 4 with 1 selected package --
