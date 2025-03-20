@@ -72,10 +72,10 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_144141) do
   create_table "journals", force: :cascade do |t|
     t.string "title"
     t.date "date"
-    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "trip_id", null: false
+    t.text "content"
     t.index ["trip_id"], name: "index_journals_on_trip_id"
   end
 
