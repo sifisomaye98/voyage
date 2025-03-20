@@ -1,7 +1,6 @@
 <div class="background_image">
-  <h1>Voyage</h1>
+  <h1>Bon Voyage😎</h1>
   <h2 class="my-5">The world is a click away</h2>
-  <!--<div class= "trip-form">-->
   <div class="container">
     <div class="home-form">
       <%= simple_form_for(@trip, html: { class:"trip-form"}) do |f| %>
@@ -14,28 +13,25 @@
           <h4 class="mx-2">Style:</h4>
           <%= f.input :category, as: :select, collection: Trip.humanized_categories.keys, include_blank: false, label_method: lambda { |key| Trip.humanized_categories[key] }, prompt: "Select Category", label: false %>
         </div>
-        <%#= f.association :destination, label: "" %>
-        <div class="form-flex">
-          <h4 class="me-2">Dates:</h4>
-          <%= f.input :start_date,
+        <h4 class="me-2">Dates:</h4>
+        <%= f.input :start_date,
               as: :string,
               placeholder: "starting",
               label: false,
               input_html: { data: { controller: "datepicker" } } %>
-          <%= f.input :end_date,
+        <%= f.input :end_date,
               as: :string,
                label: false,
               placeholder: "ending",
               input_html: { data: { controller: "datepicker" } } %>
-        </div>
-        <div class="form-flex">
-          <h4 class="me-2">Budget:</h4>
-          <%= f.input :budget, placeholder: "$$$", label: false  %>
-        </div>
-        <%= f.submit class: "card-simple-button my-3" %>
-      <% end %>
-    </div>
-    <!--</div>-->
+      </div>
+      <div class="form-flex">
+        <h4 class="me-2">Budget:</h4>
+        <%= f.input :budget, placeholder: "$$$", label: false  %>
+      </div>
+      <%= f.submit class: "card-simple-button my-3" %>
+    <% end %>
   </div>
+</div>
 </div>
 </div>

@@ -18,6 +18,7 @@
         <% end %>
         <div class="text-container">
           <p> <%= clean_and_format_description(@trip.package.description) %> </p>
+           <%= render 'trip_photos_form', trip: @trip %>
         </div>
       </div>
       <div id="selected-journal-card" class="col-4">
