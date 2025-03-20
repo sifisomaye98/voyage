@@ -204,8 +204,8 @@ Journal.create!(
 Journal.create!(
   trip_id: trip3.id,
   title: "Day 2: Tradition Meets Tech",
-  content: "Started off at the Imperial Palace gardens—so lush and peaceful, with a dash of centuries-old history in every corner. Next, I hopped on the train to the Tokyo Skytree for breathtaking 360° views—my heart was in my throat peering down at the endless cityscape below. As the sun set, I took a leisurely river cruise along the Sumida, floating under twinkling bridges while skyscrapers sparkled on both sides. Pure Tokyo magic!"
-  date: trip3.start_date + 2,
+  content: "Started off at the Imperial Palace gardens—so lush and peaceful, with a dash of centuries-old history in every corner. Next, I hopped on the train to the Tokyo Skytree for breathtaking 360° views—my heart was in my throat peering down at the endless cityscape below. As the sun set, I took a leisurely river cruise along the Sumida, floating under twinkling bridges while skyscrapers sparkled on both sides. Pure Tokyo magic!",
+  date: trip3.start_date + 2
 )
 
 # -- Trip 4 with 1 selected package --
