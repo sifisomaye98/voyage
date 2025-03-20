@@ -30,7 +30,11 @@
 <!--    </div>
   </div>
 </div>
---><div class="login-wrap">
+
+-->
+<h1>Voyage</h1>
+  <h2 class="my-5">The world is a click away</h2>
+<div class="login-wrap">
   <div class="login-html">
 
     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Log In</label>
@@ -38,13 +42,13 @@
 
     <div class="login-form">
 
-      <div class="sign-in-htm">
+      <div class="sign-in-html">
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="group">
-            <%= f.input :email, label: 'Email', required: true, input_html: { class: "input", autocomplete: "email" } %>
+            <%= f.input :email, label: 'Email', required: true, input_html: { class: "input form-control bg-white", autocomplete: "email" } %>
           </div>
           <div class="group">
-            <%= f.input :password, label: 'Password', required: true, input_html: { class: "input", autocomplete: "current-password" } %>
+            <%= f.input :password, label: 'Password', required: true, input_html: { class: "input form-control bg-white", autocomplete: "current-password" } %>
           </div>
           <div class="group">
             <%= f.input :remember_me, as: :boolean, label: 'Keep me signed in' if devise_mapping.rememberable? %>

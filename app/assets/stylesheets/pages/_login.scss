@@ -72,7 +72,7 @@
   border: none;
   padding: 15px 20px;
   border-radius: 25px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(255, 255, 255);
 }
 
 .login-form .group input[data-type="password"] {
@@ -81,7 +81,7 @@
 }
 
 .login-form .group .label {
-  color: #aaa;
+  color: #fffdfd;
   font-size: 12px;
 }
 
@@ -153,4 +153,8 @@
 
 .foot-lnk {
   text-align: center;
+}
+
+.form-label {
+  color: white
 }
