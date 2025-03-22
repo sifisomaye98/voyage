@@ -53,6 +53,7 @@ gem "ruby-openai"
 gem "cloudinary"
 gem "geocoder"
 gem "solid_queue"
+gem "redis"
 
 group :development, :test do
   gem "dotenv-rails"
