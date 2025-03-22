@@ -30,7 +30,7 @@
         <div class="carousel-journal" >
           <% if @trip_journals %>
             <% @trip_journals.each do |journal| %>
-              <% if journal.rich_text_content.body %>
+              <% if journal.rich_text_content&.body.present? %>
                 <div class="trip-journal-card journal-card text-center">
                   <%= link_to journal.title, journal_path(journal) %>
                   <div class="journal-text">
