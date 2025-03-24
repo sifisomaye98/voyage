@@ -13,7 +13,7 @@
         <% if @trip&.photos&.attached? && @trip.photos.any? %>
           <% first_photo = @trip.photos.first %>
           <% if first_photo.present? %>
-            <%= cl_image_tag(first_photo.first.key, alt: "AI-generated image of the package destination", class: "half-width") %>
+            <%= cl_image_tag(first_photo.key, alt: "AI-generated image of the package destination", class: "half-width") %>
           <% else %>
             <%= image_tag("Italy.png", class: "half-width") %>
           <% end %>
