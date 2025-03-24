@@ -1,10 +1,15 @@
-<%= turbo_stream_from "trip_#{@trip.id}_packages" %>
+<%#= turbo_stream_from "trip_#{@trip.id}_packages" %>
 <div class="container">
-  <h1> Your trip to <%= @trip.destination.name  %> 🗺️ </h1>
+  <h1> Your trip to <%= @trip.destination.name %> 🗺️ </h1>
   <h5> Embracing new challenges and stepping outside of comfort zones. Each moment adds to the adventure and creates lasting memories.
     The journey is just as important as the destination.
   </h5>
 </div>
+
 <div class="text-container">
-  <p> <%= clean_and_format_description(@trip.package.description) %> </p>
-</div>
+  <% if @trip.package.present? %>
+    <p> <%= clean_and_format_description(@trip.package.description) %> </p>
+  <% else %>
+    <%= image_tag("Italy.png", class:"half-width") %>
+  <% end %>
+</div>  
