@@ -1,33 +1,19 @@
 class PackagesController < ApplicationController
-  # before_action :set_package, only: [:show]
 
   def show
   end
 
-  # def edit
-    # @trip = Trip.find(params[trip_id])
-    # @package.trip = @trip
-    # set_package
-  # end
 
   def set_package
     trip = Trip.find(params[:trip_id])
     @package = Package.find(params[:id])
-    # trip.package = @package
-    @package.update(selected: true)
-    trip.package = @package
+    trip.packages.update_all(selected: false)
+    @package.update!(selected: true)
+    trip.update!(package_id: @package.id)
     if trip.save
-      redirect_to trip_path(trip)
+      redirect_to trip_path(trip), notice: "Package selected successfully"
     else
       render :edit, status: :unprocessable_entity
     end
   end
-
-  # private
-
-  # def package_params
-  #   params.require(:package).permit(:description, :name, :photo)
-  # end
-
-
 end

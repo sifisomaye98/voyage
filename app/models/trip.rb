@@ -3,16 +3,20 @@ class Trip < ApplicationRecord
   belongs_to :package, optional: true
   has_many :packages, dependent: :destroy
   belongs_to :destination
-  # has_many :itineraries
+
   has_many :journals
   has_many_attached :photos
+
+  def selected_package
+    packages.find_by(selected: true) || packages.last
+  end
 
   def duration
     number_of_days = end_date - start_date
     return number_of_days
   end
 
-  # method to generate optional packages for a trip
+
   enum category: {
     backpacker: 1,
     luxury_traveler: 2,

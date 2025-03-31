@@ -13,11 +13,20 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find(params[:id])
     @trip_packages = @trip.packages
     @journals = Journal.with_rich_text_content
-
     @trip_journals = @trip.journals
+    @selected_package = @trip.packages.find_by(selected: true)
+    respond_to do |format|
+      format.html
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(
+          "trip_packages_container",
+          partial: "trips/show_packages_container",
+          locals: { trip: @trip, selected_package: @selected_package }
+        )
+      end
+    end
   end
 
   def new

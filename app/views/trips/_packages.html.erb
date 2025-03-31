@@ -3,7 +3,11 @@
     <% trip.packages.each do |package| %>
       <div class="trip-package-card">
         <div class="trip-package-image">
-          <%= button_to "Choose package", set_package_trip_package_path(trip, package), class: "card-simple-button", id:"choose-package-button"%>
+          <%= button_to set_package_trip_package_path(trip, package),
+    class: "card-simple-button", id: "choose-package-button", method: :post,
+    form: { data: { turbo: false } } do %>
+            Choose package
+          <% end %>
           <% if package.photo.attached? %>
             <%= cl_image_tag(package.photo.key, alt: "AI-generated image", class:"card-simple-image") %>
           <% else %>
