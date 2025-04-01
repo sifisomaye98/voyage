@@ -3,6 +3,7 @@ class Package < ApplicationRecord
   belongs_to :flight, optional: true
   belongs_to :hotel, optional: true
   has_one_attached :photo
+  belongs_to :trip, optional: true
 
   def set_photo(trip)
     client = OpenAI::Client.new

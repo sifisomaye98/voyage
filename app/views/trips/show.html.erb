@@ -6,20 +6,21 @@
     The journey is just as important as the destination.
   </h5>
 </div>
-<% if @trip.package.present? %>
-  <div class="selected-trip-container">
-    <div id="selected-package-card" class="row">
-      <div class="col-7 d-flex">
-        <% if @trip&.photos&.attached? && @trip.photos.any? %>
-          <% first_photo = @trip.photos.first %>
-          <% if first_photo.present? %>
+<%#= render "trips/show_packages_container", trip: @trip, selected_package: @selected_package, trip_journals: @trip_journals%>
+<div id="trip_packages_container">
+  <% if @selected_package.present?%>
+    <div class="selected-trip-container">
+      <div id="selected-package-card" class="row">
+        <div class="col-7 d-flex">
+          <% if @trip&.photos&.attached? && @trip.photos.any? %>
+            <% first_photo = @trip.photos.first %>
             <%= cl_image_tag(first_photo.key, alt: "AI-generated image of the package destination", class: "half-width") %>
           <% else %>
             <%= image_tag("Italy.png", class: "half-width") %>
           <% end %>
           <div class="text-container">
-            <% if @trip.package&.description.present? %>
-              <p> <%= clean_and_format_description(@trip.package.description) %> </p>
+            <% if @selected_package&.description.present? %>
+              <p> <%= clean_and_format_description(@selected_package.description) %> </p>
             <% end %>
             <%= simple_form_for(@trip) do |f| %>
               <%= f.input :photos, as: :file, input_html: { multiple: true } %>
@@ -32,8 +33,8 @@
             <%= link_to "Journal", trip_journals_path(@trip), class: "card-simple-button" %>
           </div>
           <div class="carousel-journal">
-            <% if @trip_journals&.any? %>
-              <% @trip_journals.each do |journal| %>
+            <% if @trip.journals.first.rich_text_content&.body.present? %>
+              <% @trip.journals.each do |journal| %>
                 <% if journal.rich_text_content&.body.present? %>
                   <div class="trip-journal-card journal-card text-center">
                     <%= link_to journal.title, journal_path(journal) %>
@@ -83,4 +84,4 @@
       </div>
     </div>
   <% end %>
-<% end  %>
+</div>

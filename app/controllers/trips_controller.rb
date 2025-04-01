@@ -13,11 +13,10 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find(params[:id])
     @trip_packages = @trip.packages
     @journals = Journal.with_rich_text_content
-
     @trip_journals = @trip.journals
+    @selected_package = @trip.packages.find_by(selected: true)
   end
 
   def new
