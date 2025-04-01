@@ -6,7 +6,6 @@
     The journey is just as important as the destination.
   </h5>
 </div>
-<%#= render "trips/show_packages_container", trip: @trip, selected_package: @selected_package, trip_journals: @trip_journals%>
 <div id="trip_packages_container">
   <% if @selected_package.present?%>
     <div class="selected-trip-container">
@@ -26,62 +25,67 @@
               <%= f.input :photos, as: :file, input_html: { multiple: true } %>
               <%= f.submit "Add photo", class: "card-simple-button" %>
             <% end %>
+            <%#= simple_form_for(@recommendation) do |f| %>
+              <%# <%= f.input :category, as: :select, collection: Package.humanized_categories.keys, include_blank: false, label_method: lambda { |key| Package.humanized_categories[key] }, prompt: "Select Category" %>
+              <%#= f.association :destination %>
+              <%#= f.submit "Create restuarant recommedations", class: "card-simple-button" %>
+              <%# end %>
+            </div>
           </div>
-        </div>
-        <div id="selected-journal-card" class="col-4 trip-journal-card">
-          <div class="text-center mb-5">
-            <%= link_to "Journal", trip_journals_path(@trip), class: "card-simple-button" %>
-          </div>
-          <div class="carousel-journal">
-            <% if @trip.journals.first.rich_text_content&.body.present? %>
-              <% @trip.journals.each do |journal| %>
-                <% if journal.rich_text_content&.body.present? %>
-                  <div class="trip-journal-card journal-card text-center">
-                    <%= link_to journal.title, journal_path(journal) %>
-                    <div class="journal-text">
-                      <%= journal.content %>
-                    </div>
-                  </div>
-                <% end %>
-              <% end %>
-            <% else %>
-              <p>
-                Now is the time to savor the anticipation, to dream about the sights, sounds, and flavors ahead. But don’t let those fleeting details slip away—capture them. Let your journal be your travel companion, a place to spill your excitement, sketch the landscapes, and write down the little moments that make your adventure uniquely yours.
-                Start your journey before you even step on the plane—begin journaling today!
-              </p>
-            <% end %>
-            <% if @trip.photos.attached? %>
-              <div class="space-carousel">
-                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                    <% @trip.photos.each_with_index do |photo, index| %>
-                      <div class="carousel-item <%= 'active' if index.zero? %>">
-                        <%= cl_image_tag(photo.key, class: "d-block w-100") %>
+          <div id="selected-journal-card" class="col-4 trip-journal-card">
+            <div class="text-center mb-5">
+              <%= link_to "Journal", trip_journals_path(@trip), class: "card-simple-button" %>
+            </div>
+            <div class="carousel-journal">
+              <% if @trip.journals.first.rich_text_content&.body.present? %>
+                <% @trip.journals.each do |journal| %>
+                  <% if journal.rich_text_content&.body.present? %>
+                    <div class="trip-journal-card journal-card text-center">
+                      <%= link_to journal.title, journal_path(journal) %>
+                      <div class="journal-text">
+                        <%= journal.content %>
                       </div>
-                    <% end %>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <p>
+                  Now is the time to savor the anticipation, to dream about the sights, sounds, and flavors ahead. But don’t let those fleeting details slip away—capture them. Let your journal be your travel companion, a place to spill your excitement, sketch the landscapes, and write down the little moments that make your adventure uniquely yours.
+                  Start your journey before you even step on the plane—begin journaling today!
+                </p>
+              <% end %>
+              <% if @trip.photos.attached? %>
+                <div class="space-carousel">
+                  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <% @trip.photos.each_with_index do |photo, index| %>
+                        <div class="carousel-item <%= 'active' if index.zero? %>">
+                          <%= cl_image_tag(photo.key, class: "d-block w-100") %>
+                        </div>
+                      <% end %>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
                   </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  <% else %>
-    <div id="trip_<%= @trip.id %>">
-      <div class="trip-card">
-        <div id="trip_packages">
-          <%= render "trips/packages", trip: @trip %>
+    <% else %>
+      <div id="trip_<%= @trip.id %>">
+        <div class="trip-card">
+          <div id="trip_packages">
+            <%= render "trips/packages", trip: @trip %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>

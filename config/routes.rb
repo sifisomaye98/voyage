@@ -19,5 +19,5 @@ Rails.application.routes.draw do
     end
   end
   resources :journals, only: [:show, :update]
-  resources :recommendations, only: [:new, :index]
+  resources :recommendations, only: [:new, :create, :index]
 end
