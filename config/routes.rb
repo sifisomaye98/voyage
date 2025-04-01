@@ -17,8 +17,7 @@ Rails.application.routes.draw do
         post :set_package
       end
     end
-    # resources :itineraries, only: [:show, :new, :update]
-    # resources :destination
   end
   resources :journals, only: [:show, :update]
+  resources :recommendations, only: [:new, :index]
 end
