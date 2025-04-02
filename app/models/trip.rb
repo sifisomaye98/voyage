@@ -54,7 +54,8 @@ class Trip < ApplicationRecord
       trip_id: self.id
     )
     package.set_photo(self) if self.photos.attached?
-    # packages << package
-
   end
+
+  # def generate_recommendations
+  # end
 end

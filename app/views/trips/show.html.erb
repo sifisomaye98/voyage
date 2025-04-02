@@ -26,9 +26,8 @@
               <%= f.submit "Add photo", class: "card-simple-button" %>
             <% end %>
             <%#= simple_form_for(@recommendation) do |f| %>
-              <%# <%= f.input :category, as: :select, collection: Package.humanized_categories.keys, include_blank: false, label_method: lambda { |key| Package.humanized_categories[key] }, prompt: "Select Category" %>
-              <%#= f.association :destination %>
-              <%#= f.submit "Create restuarant recommedations", class: "card-simple-button" %>
+              <%# <%= f.input :category, as: :select, collection: Recommendation.humanized_categories.keys, include_blank: false, label_method: lambda { |key| Recommendation.humanized_categories[key] }, prompt: "Select Food Type" %>
+              <%#= f.submit "Create restuarant recommendations", class: "card-simple-button" %>
               <%# end %>
             </div>
           </div>
